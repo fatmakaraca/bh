@@ -1,0 +1,88 @@
+{
+  "disease_info": {
+    "id": "grip",
+    "name": "Grip (İnfluenza)",
+    "specialty": "enfeksiyon_hastalıkları",
+    "difficulty": "kolay",
+    "description": "İnfluenza virüslerinin neden olduğu akut solunum yolu enfeksiyonu",
+    "learning_objectives": [
+      "İnfluenza tanı kriterleri",
+      "Hızlı test ve PCR kullanımı",
+      "Antiviral tedavi endikasyonları",
+      "Komplikasyon riski değerlendirmesi"
+    ],
+    "cases": [
+      {
+        "case_id": "INFECT_GRIP_001",
+        "title": "Mevsimsel İnfluenza A",
+        "patient_profile": {
+          "age": 32,
+          "gender": "kadın",
+          "chief_complaint": "Ani başlangıçlı yüksek ateş ve yaygın vücut ağrısı",
+          "history": "2 gün önce ani başlayan ateş, titreme, kas ağrıları",
+          "contact_history": "İş yerinde grip salgını",
+          "symptoms": {
+            "fever": "Ani başlangıçlı yüksek ateş (39.2°C)",
+            "chills": "Şiddetli titreme",
+            "myalgia": "Yaygın kas ve eklem ağrısı",
+            "headache": "Frontal baş ağrısı",
+            "fatigue": "Şiddetli yorgunluk, güçsüzlük",
+            "dry_cough": "Kuru, nonprodüktif öksürük",
+            "sore_throat": "Hafif boğaz ağrısı",
+            "nasal_congestion": "Minimal burun tıkanıklığı"
+          },
+          "medical_history": [
+            "Mevsimsel grip aşısı almamış",
+            "Kronik hastalık yok",
+            "İş yerinde temas öyküsü"
+          ],
+          "vital_signs": {
+            "blood_pressure": "110/70",
+            "heart_rate": 105,
+            "respiratory_rate": 20,
+            "temperature": 39.2,
+            "oxygen_saturation": 98
+          },
+          "physical_exam": {
+            "general": "Hasta görünümde, toksik değil",
+            "respiratory": "Bilateral eşit solunum sesleri",
+            "throat": "Minimal eritem",
+            "lymph_nodes": "Servikal LAP yok",
+            "skin": "Döküntü yok"
+          },
+          "laboratory": {
+            "rapid_influenza_test": "İnfluenza A pozitif",
+            "rt_pcr": "İnfluenza A H3N2 pozitif",
+            "complete_blood_count": "Lökosit: 4200/µL (normal-düşük)"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "32 yaşında kadın hasta, ani başlangıçlı grip benzeri semptomlarla başvurdu.",
+          "differential_diagnosis": [
+            "İnfluenza",
+            "Parainfluenza",
+            "RSV",
+            "Bakteriyel pnömoni"
+          ]
+        },
+        "correct_diagnosis": "İnfluenza A (H3N2)",
+        "treatment_plan": [
+          "Oseltamivir 75mg 2x1 (5 gün)",
+          "Semptomatik tedavi (parasetamol)",
+          "İstirahat ve sıvı alımı",
+          "İzolasyon (24 saat ateşsiz kalana kadar)"
+        ],
+        "learning_points": [
+          "İnfluenza vs common cold ayrımı",
+          "Antiviral tedavi zamanlaması (48 saat kuralı)",
+          "Aşı önemi ve herd immunity"
+        ],
+        "complications": [
+          "Primer viral pnömoni",
+          "Sekonder bakteriyel pnömoni",
+          "Myocarditis, encephalitis"
+        ]
+      }
+    ]
+  }
+}

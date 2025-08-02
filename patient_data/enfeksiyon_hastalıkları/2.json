@@ -1,0 +1,98 @@
+{
+  "disease_info": {
+    "id": "hepatit_b",
+    "name": "Hepatit B",
+    "specialty": "enfeksiyon_hastalıkları",
+    "difficulty": "orta",
+    "description": "Hepatit B virüsünün neden olduğu akut ve kronik karaciğer enfeksiyonu",
+    "learning_objectives": [
+      "HBV serolojik markerlerin yorumlanması",
+      "Akut vs kronik hepatit B ayrımı",
+      "Antiviral tedavi endikasyonları",
+      "Komplikasyon ve tarama programları"
+    ],
+    "cases": [
+      {
+        "case_id": "INFECT_HBV_001",
+        "title": "Akut Hepatit B",
+        "patient_profile": {
+          "age": 28,
+          "gender": "erkek",
+          "chief_complaint": "Yorgunluk, bulantı ve göz sarılığı",
+          "history": "2 hafta önce başlayan yorgunluk, 1 haftadır sarılık",
+          "risk_factors": ["korunmasız cinsel temas", "tatovaj öyküsü"],
+          "symptoms": {
+            "fatigue": "Şiddetli yorgunluk, güçsüzlük",
+            "nausea": "Sürekli bulantı",
+            "anorexia": "İştahsızlık, kilo kaybı",
+            "abdominal_pain": "Sağ üst kadran ağrısı",
+            "jaundice": "Sklera ve ciltte sarılık",
+            "dark_urine": "Koyu renk idrar",
+            "pale_stool": "Açık renkli dışkı",
+            "fever": "Hafif ateş (37.8°C)"
+          },
+          "medical_history": [
+            "6 ay önce riskli cinsel temas",
+            "3 ay önce tatovaj yaptırdı",
+            "Hepatit B aşısı almamış"
+          ],
+          "vital_signs": {
+            "blood_pressure": "110/70",
+            "heart_rate": 88,
+            "respiratory_rate": 18,
+            "temperature": 37.8,
+            "weight": "72 kg (2 kg kaybı)"
+          },
+          "physical_exam": {
+            "general": "İkterik, hasta görünümde",
+            "abdomen": "Sağ üst kadran hassasiyet, hepatomegali",
+            "skin": "İkterik, spider nevi yok",
+            "lymph_nodes": "Palpable değil",
+            "spleen": "Splenomegali yok"
+          },
+          "laboratory": {
+            "hbsag": "Pozitif",
+            "anti_hbs": "Negatif",
+            "anti_hbc_igm": "Pozitif",
+            "anti_hbc_total": "Pozitif",
+            "hbeag": "Pozitif",
+            "anti_hbe": "Negatif",
+            "hbv_dna": "10^6 IU/mL",
+            "alt": "850 U/L (N: <40)",
+            "ast": "720 U/L (N: <40)",
+            "total_bilirubin": "8.5 mg/dL",
+            "direct_bilirubin": "6.2 mg/dL",
+            "alkaline_phosphatase": "180 U/L"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "28 yaşında erkek hasta, akut hepatit bulguları ile başvurdu.",
+          "serology_interpretation": "Akut HBV enfeksiyonu (HBsAg+, anti-HBc IgM+)"
+        },
+        "correct_diagnosis": "Akut Hepatit B",
+        "treatment_plan": [
+          "Destekleyici tedavi (yatak istirahati)",
+          "Hepatotoksik ilaçlardan kaçınma",
+          "Alkol yasağı",
+          "ALT düzeyi takibi",
+          "HBsAg klirens izlemi"
+        ],
+        "learning_points": [
+          "HBV serolojik panel yorumlama",
+          "Transmission routes eğitimi",
+          "Aşı önemi ve post-exposure profilaksi"
+        ],
+        "complications": [
+          "Fulminant hepatit riski",
+          "Kronikleşme (%5-10)",
+          "Siroz ve HCC riski"
+        ],
+        "follow_up": [
+          "6 ay sonra HBsAg kontrolü",
+          "Anti-HBs gelişimi takibi",
+          "Aile taraması ve aşı"
+        ]
+      }
+    ]
+  }
+}

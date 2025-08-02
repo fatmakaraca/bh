@@ -1,0 +1,72 @@
+{
+  "disease_info": {
+    "id": "akne_vulgaris",
+    "name": "Akne Vulgaris",
+    "specialty": "dermatoloji",
+    "difficulty": "kolay",
+    "description": "Pilosebase ünitelerin kronik inflamatuar hastalığı",
+    "learning_objectives": [
+      "Akne lezyonlarının tanınması",
+      "Akne şiddet sınıflaması",
+      "Topikal ve sistemik tedavi seçenekleri",
+      "Hormonal faktörlerin değerlendirilmesi"
+    ],
+    "cases": [
+      {
+        "case_id": "DERMATO_AKNE_001",
+        "title": "Ergen Çağı Akne Vulgaris",
+        "patient_profile": {
+          "age": 16,
+          "gender": "erkek",
+          "chief_complaint": "Yüz, sırt ve göğüste sivilce problemi",
+          "history": "6 aydır artan yüz ve sırt bölgesinde sivilce, okul stresinde artıyor",
+          "risk_factors": ["puberte", "ailesel yatkınlık", "yağlı cilt"],
+          "symptoms": {
+            "comedones": "Yüzde siyah nokta ve beyaz nokta",
+            "papules": "Kırmızı kabarık lezyonlar",
+            "pustules": "İltihaplı sivilceler",
+            "nodules": "Derin, ağrılı kistik lezyonlar",
+            "scarring": "Minimal atrofik skar"
+          },
+          "medical_history": [
+            "Ergenlik çağı",
+            "Hormonal değişiklikler",
+            "Önceden topikal krem kullanımı"
+          ],
+          "vital_signs": {
+            "blood_pressure": "110/70",
+            "heart_rate": 85,
+            "temperature": 36.5,
+            "bmi": "21.2"
+          },
+          "physical_exam": {
+            "skin": "Yüz T zonunda yağlı görünüm",
+            "comedones": "Alın ve burun bölgesinde yaygın",
+            "inflammatory_lesions": "Yanaklar ve çenede papül-püstüller",
+            "scarring": "Minimal postinflamatuar hiperpigmentasyon"
+          },
+          "laboratory": {
+            "testosteron": "Normal aralıkta (ergen için)",
+            "dhea_s": "Normal"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "16 yaşında erkek hasta, 6 aydır artan akne lezyonları nedeniyle başvurdu.",
+          "severity_assessment": "Orta şiddetli akne (Grade 2-3)"
+        },
+        "correct_diagnosis": "Akne Vulgaris (Orta Şiddetli)",
+        "treatment_plan": [
+          "Topikal retinoid (Adapalen %0.1 jel)",
+          "Topikal antibiotik (Klindamisin %1)",
+          "Benzoil peroksit %2.5",
+          "Yumuşak temizleyici kullanımı"
+        ],
+        "learning_points": [
+          "Akne patogenezi (androgen, sebum, P.acnes)",
+          "Komedojenik ürünlerden kaçınma",
+          "Tedavi uyumu ve sabır gerekliliği"
+        ]
+      }
+    ]
+  }
+}

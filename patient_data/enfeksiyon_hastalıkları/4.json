@@ -1,0 +1,87 @@
+{
+  "disease_info": {
+    "id": "üriner_sistem_enfeksiyonu",
+    "name": "Üriner Sistem Enfeksiyonu (ÜSE)",
+    "specialty": "enfeksiyon_hastalıkları",
+    "difficulty": "kolay",
+    "description": "İdrar yollarının bakteriyel enfeksiyonu",
+    "learning_objectives": [
+      "ÜSE tanı kriterleri",
+      "İdrar analizi yorumlama",
+      "Empirik antibiotik seçimi",
+      "Komplike vs basit ÜSE ayrımı"
+    ],
+    "cases": [
+      {
+        "case_id": "INFECT_UTI_001",
+        "title": "Basit Sistit (Kadın)",
+        "patient_profile": {
+          "age": 26,
+          "gender": "kadın",
+          "chief_complaint": "Ağrılı işeme ve sık idrara çıkma",
+          "history": "2 gündür dizüri, polaküri, suprapubik ağrı",
+          "risk_factors": ["cinsel aktivite", "gebelik değil", "DM yok"],
+          "symptoms": {
+            "dysuria": "Ağrılı işeme (yanma)",
+            "frequency": "Sık idrara çıkma (saatte 1-2 kez)",
+            "urgency": "İdrar aciliyeti",
+            "nocturia": "Gece 3-4 kez uyanma",
+            "suprapubic_pain": "Suprapubik bölgede ağrı",
+            "fever": "Ateş YOK",
+            "flank_pain": "Yan ağrısı YOK",
+            "hematuria": "Hafif hematüri"
+          },
+          "medical_history": [
+            "Önceden ÜSE öyküsü (1 yıl önce)",
+            "Kronik hastalık yok",
+            "Gebelik yok"
+          ],
+          "vital_signs": {
+            "blood_pressure": "115/75",
+            "heart_rate": 85,
+            "respiratory_rate": 16,
+            "temperature": 36.8,
+            "oxygen_saturation": 99
+          },
+          "physical_exam": {
+            "general": "Genel durum iyi",
+            "abdomen": "Suprapubik hassasiyet (+)",
+            "costovertebral_angle": "CVAT negatif",
+            "pelvic": "Normal external genitalia"
+          },
+          "laboratory": {
+            "urinalysis": {
+              "leukocyte_esterase": "Pozitif (+++)",
+              "nitrites": "Pozitif",
+              "wbc": ">100/hpf",
+              "rbc": "5-10/hpf",
+              "bacteria": "Çok sayıda"
+            },
+            "urine_culture": "E. coli >100,000 CFU/mL"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "26 yaşında kadın hasta, klasik sistit semptomları ile başvurdu.",
+          "classification": "Basit (komplike olmayan) sistit"
+        },
+        "correct_diagnosis": "Basit Sistit (E. coli)",
+        "treatment_plan": [
+          "Nitrofurantoin 100mg 2x1 (5 gün)",
+          "Bol sıvı tüketimi",
+          "İdrar asitleştirici (cranberry suyu)",
+          "72 saat sonra kontrol"
+        ],
+        "learning_points": [
+          "Basit vs komplike ÜSE ayrımı",
+          "E. coli en sık etken",
+          "Kısa süreli antibiotik tedavi yeterliliği"
+        ],
+        "prevention": [
+          "İdrar tutmama",
+          "Cinsel aktivite sonrası idrara çıkma",
+          "Ön-arkaya temizlik"
+        ]
+      }
+    ]
+  }
+}

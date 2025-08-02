@@ -1,0 +1,78 @@
+{
+  "disease_info": {
+    "id": "mantar_enfeksiyonları",
+    "name": "Mantar Enfeksiyonları (Tinea Pedis gibi)",
+    "specialty": "dermatoloji",
+    "difficulty": "kolay",
+    "description": "Dermatofitlerin neden olduğu yüzeyel mantar enfeksiyonları",
+    "learning_objectives": [
+      "Dermatofit enfeksiyonlarının tanınması",
+      "KOH preparatı değerlendirmesi",
+      "Topikal antifungal tedavi seçimi",
+      "Predispozan faktörlerin kontrolü"
+    ],
+    "cases": [
+      {
+        "case_id": "DERMATO_MANTAR_001",
+        "title": "Tinea Pedis (Ayak Mantarı)",
+        "patient_profile": {
+          "age": 28,
+          "gender": "erkek",
+          "chief_complaint": "Ayak parmak aralarında kaşıntı ve çatlaklar",
+          "history": "2 aydır spor salonuna gittikten sonra başlayan ayak problemi",
+          "risk_factors": ["nemli ortam", "toplu spor alanları", "terli ayak"],
+          "symptoms": {
+            "pruritus": "Şiddetli kaşıntı, özellikle geceleri",
+            "erythema": "Kızarıklık",
+            "scaling": "Pullanma",
+            "fissures": "Parmak aralarında çatlaklar",
+            "maceration": "Nemli, beyazımsı alan",
+            "odor": "Kötü koku"
+          },
+          "medical_history": [
+            "Nemli ortamlara maruziyet",
+            "Spor salonu kullanımı",
+            "Sentetik çorap kullanımı"
+          ],
+          "vital_signs": {
+            "blood_pressure": "120/75",
+            "heart_rate": 72,
+            "temperature": 36.4,
+            "weight": "75 kg",
+            "height": "178 cm"
+          },
+          "physical_exam": {
+            "feet": "4. ve 5. parmak aralarında maserasyonlu alan",
+            "toenails": "Normal görünüm",
+            "other_areas": "Kasık ve el tutulumu yok",
+            "secondary_infection": "Bakteriyel süperenfeksiyon yok"
+          },
+          "laboratory": {
+            "koh_preparation": "Hifa ve spor yapıları görüldü",
+            "fungal_culture": "Trichophyton rubrum üremesi"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "28 yaşında erkek hasta, spor salonu sonrası başlayan ayak mantarı.",
+          "differential_diagnosis": [
+            "Tinea pedis",
+            "Kontakt dermatit",
+            "Bakteriyel enfeksiyon"
+          ]
+        },
+        "correct_diagnosis": "Tinea Pedis (Interdigital tip)",
+        "treatment_plan": [
+          "Topikal antifungal (Terbinafin krem 2x1, 2 hafta)",
+          "Ayak hijyeni eğitimi",
+          "Pamuklu çorap kullanımı",
+          "Ayakkabı değişimi ve kurulatılması"
+        ],
+        "learning_points": [
+          "Dermatofit tanısında KOH önemi",
+          "Predispozan faktör kontrolü",
+          "Nüks önleme stratejileri"
+        ]
+      }
+    ]
+  }
+}

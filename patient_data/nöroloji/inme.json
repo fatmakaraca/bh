@@ -1,0 +1,64 @@
+{
+  "disease_info": {
+    "id": "inme",
+    "name": "İnme (Serebrovasküler Olay)",
+    "specialty": "nöroloji",
+    "difficulty": "zor",
+    "description": "Beyin kan akımının azalması veya kesilmesi sonucu oluşan hastalık",
+    "learning_objectives": [
+      "NIHSS skorlaması",
+      "Trombolitik tedavi endikasyonları",
+      "İskemik vs hemorajik ayrımı",
+      "Akut dönem yönetimi"
+    ],
+    "cases": [
+      {
+        "case_id": "NEURO_STROKE_001",
+        "title": "Akut İskemik İnme",
+        "patient_profile": {
+          "age": 65,
+          "gender": "erkek",
+          "chief_complaint": "Ani sol taraf güçsüzlüğü ve konuşma bozukluğu",
+          "history": "2 saat önce ani başlayan sol hemiparezi ve dizartri",
+          "risk_factors": ["hipertansiyon", "diyabet", "sigara", "AF"],
+          "onset_time": "2 saat önce",
+          "vital_signs": {
+            "blood_pressure": "180/100",
+            "heart_rate": "irregular, 95",
+            "respiratory_rate": 18,
+            "temperature": 36.5,
+            "glucose": "140 mg/dL"
+          },
+          "neurological_exam": {
+            "consciousness": "Koopere",
+            "speech": "Dizartri (+)",
+            "motor": "Sol hemiparezi (4/5)",
+            "sensory": "Sol hemihipoestezi",
+            "reflexes": "Sol hiperrefleksi",
+            "babinski": "Sol (+)",
+            "cranial_nerves": "VII. sinir paralizisi (santral tip)"
+          },
+          "nihss_score": "8 puan"
+        },
+        "diagnostic_tests": {
+          "ct": "Hipoden lezyon sağ MCA bölgesi",
+          "ct_angio": "Sağ MCA oklüzyonu",
+          "ekg": "Atriyal fibrilasyon",
+          "laboratory": "INR: 1.1, Troponin: Negatif"
+        },
+        "correct_diagnosis": "Akut İskemik İnme (Sağ MCA)",
+        "treatment_plan": [
+          "IV tPA (4.5 saat içinde)",
+          "Endovasküler tedavi değerlendirmesi",
+          "Antiplatelet tedavi",
+          "Kan basıncı kontrolü"
+        ],
+        "complications": [
+          "Hemorajik transformasyon riski",
+          "Beyin ödemi",
+          "Aspirasyon pnömonisi"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "disease_info": {
+    "id": "ankilozan_spondilit",
+    "name": "Ankilozan Spondilit",
+    "specialty": "romatoloji",
+    "difficulty": "yüksek",
+    "description": "Sacroiliak eklemleri ve omurgayı tutan kronik inflamatuar hastalık",
+    "learning_objectives": [
+      "AS tanı kriterleri",
+      "HLA-B27 ilişkisi",
+      "Sacroiliak MRI değerlendirmesi",
+      "TNF-alfa blokerlerinin kullanımı"
+    ],
+    "cases": [
+      {
+        "case_id": "RHEUMA_AS_001",
+        "title": "Erken Ankilozan Spondilit",
+        "patient_profile": {
+          "age": 26,
+          "gender": "erkek",
+          "chief_complaint": "3 aydır sabah tutukluğu ve bel ağrısı",
+          "history": "Yavaş başlangıçlı, sabahları belirgin tutuluk ve ağrı",
+          "symptom_characteristics": {
+            "onset": "Yavaş başlangıç (3 ay)",
+            "morning_stiffness": ">1 saat sabah tutukluğu",
+            "improvement_with_exercise": "Hareketle azalma",
+            "night_pain": "Gece ikinci yarısında ağrı",
+            "inflammatory_pattern": "İnflamatuar bel ağrısı"
+          },
+          "symptoms": {
+            "back_pain": "Lomber ve sakral bölgede derin ağrı",
+            "morning_stiffness": "2 saat sabah tutukluğu",
+            "buttock_pain": "Alternan kalça ağrısı",
+            "heel_pain": "Sağ topuk ağrısı (entezit)",
+            "fatigue": "Kronik yorgunluk"
+          },
+          "associated_symptoms": {
+            "eye_involvement": "2 kez akut anterior üveit",
+            "skin": "Hafif psoriazis plaklarl",
+            "gastrointestinal": "Zaman zaman karın ağrısı"
+          },
+          "family_history": "Babasında AS tanısı",
+          "risk_factors": [
+            "Erkek cinsiyet",
+            "Genç yaş",
+            "Aile öyküsü",
+            "HLA-B27 pozitifliği"
+          ],
+          "review_of_systems": {
+            "inflammatory_back_pain_criteria": {
+              "age_onset": "<40 yaş",
+              "insidious_onset": "Yavaş başlangıç",
+              "morning_stiffness": ">30 dakika",
+              "improvement_with_exercise": "Var",
+              "no_improvement_with_rest": "Var"
+            }
+          },
+          "vital_signs": {
+            "blood_pressure": "120/75",
+            "heart_rate": 78,
+            "respiratory_rate": 16,
+            "temperature": 36.8,
+            "weight": "75 kg",
+            "height": "180 cm"
+          },
+          "physical_exam": {
+            "spinal_mobility": {
+              "schober_test": "12 cm (normal >15 cm)",
+              "chest_expansion": "3.5 cm (azalmış)",
+              "cervical_rotation": "Hafif kısıtlı",
+              "lumbar_flexion": "Kısıtlı"
+            },
+            "sacroiliac_tests": {
+              "patrick_test": "Bilateral pozitif",
+              "compression_test": "Pozitif",
+              "distraction_test": "Pozitif"
+            },
+            "enthesitis": {
+              "achilles": "Sağ aşil tendonu hassas",
+              "plantar_fascia": "Sağ plantar fasya hassas"
+            },
+            "peripheral_joints": "Normal",
+            "extra_articular": {
+              "eyes": "Normal (önceki üveit remisyonda)",
+              "skin": "Saçlı deride hafif psoriazis"
+            }
+          },
+          "laboratory": {
+            "hla_b27": "Pozitif",
+            "esr": "45 mm/saat (yüksek)",
+            "crp": "15 mg/L (yüksek)",
+            "rf": "Negatif",
+            "accp": "Negatif"
+          },
+          "imaging": {
+            "sacroiliac_xray": "Bilateral evre 2 sakroileitis",
+            "sacroiliac_mri": "Bilateral kemik iliği ödemi, subkondral skleroz",
+            "lumbar_spine_xray": "Hafif skuaring, sindesmofitler",
+            "chest_xray": "Normal"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "26 yaşında erkek hasta, kronik inflamatuar bel ağrısı ile başvurdu.",
+          "key_features": "İnflamatuar bel ağrısı, HLA-B27 pozitifliği, sakroileitis"
+        },
+        "correct_diagnosis": "Ankilozan Spondilit",
+        "differential_diagnosis": [
+          "Mekanik bel ağrısı",
+          "Psöriatik spondiloartropati",
+          "Reaktif artrit",
+          "İnflamatuar bağırsak hastalığı artropatisi"
+        ],
+        "treatment_plan": [
+          "Farmakolojik tedavi:",
+          "- NSAİD: İndometasin 25mg 3x1",
+          "- Sülfasalazin 2g/gün (periferal tutulum için)",
+          "Fizik tedavi:",
+          "- Postür egzersizleri",
+          "- Omurga mobilizasyon egzersizleri",
+          "- Solunum egzersizleri",
+          "- Yüzme"
+        ],
+        "learning_points": [
+          "İnflamatuar bel ağrısı kriterleri",
+          "HLA-B27'nin tanısal değeri",
+          "Erken tanının önemi (ankıloz önleme)"
+        ],
+        "monitoring": [
+          "BASDAI skoru",
+          "BASFI skoru",
+          "Omurga mobilite ölçümleri",
+          "Üveit kontrolleri",
+          "Kardiyovasküler risk"
+        ],
+        "prognosis": [
+          "Erken tanı ile iyi",
+          "Fizik tedavi çok önemli",
+          "TNF blokerler ağır vakalarda etkili"
+        ]
+      }
+    ]
+  }
+}

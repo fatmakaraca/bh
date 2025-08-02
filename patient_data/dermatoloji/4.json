@@ -1,0 +1,78 @@
+{
+  "disease_info": {
+    "id": "sedef_hastalığı",
+    "name": "Sedef Hastalığı (Psoriasis)",
+    "specialty": "dermatoloji",
+    "difficulty": "orta",
+    "description": "Kronik, immün aracılı inflamatuar cilt hastalığı",
+    "learning_objectives": [
+      "Psoriasis plak özelliklerinin tanınması",
+      "PASI skorlama sistemi",
+      "Sistemik tedavi endikasyonları",
+      "Psöriatik artrit taraması"
+    ],
+    "cases": [
+      {
+        "case_id": "DERMATO_PSORIASIS_001",
+        "title": "Plak Tip Psoriasis",
+        "patient_profile": {
+          "age": 35,
+          "gender": "erkek",
+          "chief_complaint": "Dirsek ve dizlerde kırmızı, pullu döküntüler",
+          "history": "2 yıldır dirsek ekstansör yüzeylerde başlayan, yavaş büyüyen lezyonlar",
+          "family_history": "Babada psoriasis öyküsü",
+          "symptoms": {
+            "plaques": "Kırmızı, pullu, keskin sınırlı plaklar",
+            "scaling": "Gümüşi renkli kalın pul",
+            "pruritus": "Hafif-orta şiddette kaşıntı",
+            "nail_involvement": "Tırnak çukurcuklarında pitting",
+            "joint_pain": "Sabah tutukluğu yok"
+          },
+          "medical_history": [
+            "Kronik seyir (2 yıl)",
+            "Stresle alevlenme",
+            "Ailede psoriasis öyküsü"
+          ],
+          "vital_signs": {
+            "blood_pressure": "125/80",
+            "heart_rate": 78,
+            "temperature": 36.6,
+            "weight": "82 kg",
+            "height": "175 cm",
+            "bmi": "26.8"
+          },
+          "physical_exam": {
+            "skin": "Bilateral dirsek ekstansör yüzeylerde plaklar",
+            "scalp": "Saçlı deride minimal tutulum",
+            "nails": "Her iki el tırnaklarında pitting",
+            "joints": "Eklem şişliği yok",
+            "koebner": "Travma alanlarında yeni lezyon gelişimi"
+          },
+          "laboratory": {
+            "rf": "Negatif",
+            "anti_ccp": "Negatif",
+            "esr": "12 mm/saat (normal)",
+            "crp": "< 3 mg/L (normal)"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "35 yaşında erkek hasta, 2 yıldır devam eden psoriasis plakları.",
+          "pasi_score": "8.4 (orta şiddetli)",
+          "bsa": "%5 (vücut yüzey alanı)"
+        },
+        "correct_diagnosis": "Plak Tip Psoriasis (Orta Şiddetli)",
+        "treatment_plan": [
+          "Topikal steroid (Betametazon dipropriyonat)",
+          "Topikal kalsipotriol",
+          "Tar şampuanı (saçlı deri için)",
+          "Güneş ışığı maruziyeti"
+        ],
+        "learning_points": [
+          "Auspitz işareti ve Koebner fenomeni",
+          "Psöriatik artrit taraması",
+          "Kardiovasküler komorbidite riski"
+        ]
+      }
+    ]
+  }
+}

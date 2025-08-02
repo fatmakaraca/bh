@@ -1,0 +1,108 @@
+{
+  "disease_info": {
+    "id": "romatoid_artrit",
+    "name": "Romatoid Artrit",
+    "specialty": "romatoloji",
+    "difficulty": "orta",
+    "description": "Sistemik otoimmün inflamatuar artrit",
+    "learning_objectives": [
+      "RA tanı kriterleri (ACR/EULAR 2010)",
+      "RF ve anti-CCP antikorları",
+      "DMARD tedavi stratejisi",
+      "Eklem hasarı değerlendirmesi"
+    ],
+    "cases": [
+      {
+        "case_id": "RHEUMA_RA_001",
+        "title": "Erken Evre Romatoid Artrit",
+        "patient_profile": {
+          "age": 42,
+          "gender": "kadın",
+          "chief_complaint": "El eklemlerinde ağrı ve sabah tutukluğu",
+          "history": "4 aydır bilateral el eklemlerinde ağrı, sabah tutukluğu",
+          "symptom_duration": "4 ay (erken RA)",
+          "symptoms": {
+            "morning_stiffness": "Sabah tutukluğu 90 dakika",
+            "joint_pain": "Bilateral MCP, PIP eklemlerde ağrı",
+            "joint_swelling": "El bileklerinde şişlik",
+            "symmetrical_involvement": "Simetrik tutulum",
+            "fatigue": "Genel yorgunluk",
+            "low_grade_fever": "Hafif ateş",
+            "weight_loss": "2 kg kilo kaybı"
+          },
+          "family_history": "Annede RA öyküsü",
+          "medical_history": [
+            "Önceden eklem hastalığı yok",
+            "Psoriasis yok",
+            "İBD öyküsü yok"
+          ],
+          "vital_signs": {
+            "blood_pressure": "125/80",
+            "heart_rate": 88,
+            "respiratory_rate": 18,
+            "temperature": 37.5,
+            "weight": "58 kg (-2 kg)"
+          },
+          "physical_exam": {
+            "joints": {
+              "hands": "Bilateral MCP, PIP şişlik ve hassasiyet",
+              "wrists": "Bilateral şişlik, hareket kısıtlılığı",
+              "feet": "MTP eklemlerde hassasiyet",
+              "large_joints": "Normal"
+            },
+            "rheumatoid_nodules": "Yok (erken evre)",
+            "skin": "Normal",
+            "lymph_nodes": "Normal"
+          },
+          "laboratory": {
+            "esr": "45 mm/saat (yüksek)",
+            "crp": "15 mg/L (yüksek)",
+            "rheumatoid_factor": "120 IU/mL (pozitif, normal <20)",
+            "anti_ccp": "85 U/mL (pozitif, normal <20)",
+            "complete_blood_count": "Hafif anemi (Hgb: 11.2 g/dL)"
+          },
+          "imaging": {
+            "hand_xray": "Periartiküler osteopeni, minimal eklem aralığı daralması",
+            "ultrasound": "Sinovit ve güç doppler pozitifliği",
+            "mri": "Sinovit ve kemik ödemi"
+          },
+          "acr_eular_criteria": {
+            "joint_involvement": "6 puan (4-10 small joints)",
+            "serology": "3 puan (RF ve anti-CCP pozitif)",
+            "acute_phase_reactants": "1 puan (CRP yüksek)",
+            "duration": "1 puan (≥6 hafta)",
+            "total_score": "11/10 (RA tanısı)"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "42 yaşında kadın hasta, 4 aydır bilateral el eklem ağrısı.",
+          "early_ra": "Erken tanı ve tedavi kritik"
+        },
+        "correct_diagnosis": "Romatoid Artrit (Erken evre, seropozitif)",
+        "treatment_plan": [
+          "DMARD başlangıcı: Methotrexate 15mg/hafta",
+          "Folik asit 5mg/hafta",
+          "Prednizolon 10mg/gün (bridge therapy)",
+          "NSAİD: İbuprofen 600mg 3x1",
+          "Fizik tedavi ve egzersiz"
+        ],
+        "learning_points": [
+          "Erken RA tanısının önemi",
+          "Seropozitif vs seronegatif RA",
+          "Window of opportunity kavramı"
+        ],
+        "monitoring": [
+          "DAS28 skorlaması",
+          "Karaciğer fonksiyonları (MTX)",
+          "Tam kan sayımı",
+          "Remisyon hedefi"
+        ],
+        "prognosis": [
+          "Seropozitif RA daha agresif",
+          "Erken tedavi eklem hasarını önler",
+          "Anti-CCP yüksekliği kötü prognoz"
+        ]
+      }
+    ]
+  }
+}

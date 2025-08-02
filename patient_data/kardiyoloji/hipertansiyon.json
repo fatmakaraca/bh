@@ -1,0 +1,54 @@
+{
+  "disease_info": {
+    "id": "hipertansiyon",
+    "name": "Hipertansiyon (Yüksek Tansiyon)",
+    "specialty": "kardiyoloji",
+    "difficulty": "kolay",
+    "description": "Arteriyel kan basıncının sürekli yüksek olması",
+    "learning_objectives": [
+      "Hipertansiyon sınıflaması",
+      "Risk faktörü değerlendirmesi",
+      "Antihipertansif ilaç seçimi",
+      "Hedef organ hasarı değerlendirmesi"
+    ],
+    "cases": [
+      {
+        "case_id": "CARD_HT_001",
+        "title": "Esansiyel Hipertansiyon",
+        "patient_profile": {
+          "age": 48,
+          "gender": "erkek",
+          "chief_complaint": "Rutin kontrol sırasında yüksek tansiyon",
+          "history": "Asemptomatik, rutin checkup'ta tansiyon yüksekliği saptandı",
+          "risk_factors": ["obezite", "sedanter yaşam", "tuz tüketimi", "aile öyküsü"],
+          "vital_signs": {
+            "blood_pressure": "165/95",
+            "heart_rate": 78,
+            "respiratory_rate": 16,
+            "temperature": 36.4,
+            "oxygen_saturation": 99,
+            "bmi": "31.2"
+          },
+          "physical_exam": {
+            "cardiovascular": "Normal S1, S2, murmur yok",
+            "fundoscopy": "Normal retinal bulgular",
+            "abdomen": "Hepatomegali yok, renal bruit yok"
+          },
+          "laboratory": {
+            "creatinine": "1.1 mg/dL",
+            "potassium": "4.2 mEq/L",
+            "glucose": "95 mg/dL",
+            "urinalysis": "Normal"
+          }
+        },
+        "correct_diagnosis": "Evre 2 Esansiyel Hipertansiyon",
+        "treatment_plan": [
+          "ACE inhibitörü (Lisinopril 10mg/gün)",
+          "Yaşam tarzı değişiklikleri",
+          "Düşük sodyum diyeti",
+          "Düzenli egzersiz programı"
+        ]
+      }
+    ]
+  }
+}

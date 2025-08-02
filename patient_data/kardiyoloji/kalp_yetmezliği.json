@@ -1,0 +1,59 @@
+{
+  "disease_info": {
+    "id": "kalp_yetmezliği",
+    "name": "Kalp Yetmezliği",
+    "specialty": "kardiyoloji",
+    "difficulty": "orta",
+    "description": "Kalbin vücudun ihtiyacını karşılayacak kadar kan pompalayamaması",
+    "learning_objectives": [
+      "NYHA sınıflaması",
+      "Ekokardiyografi değerlendirmesi",
+      "BNP/NT-proBNP yorumlama",
+      "ACE inhibitörü ve diüretik kullanımı"
+    ],
+    "cases": [
+      {
+        "case_id": "CARD_KY_001",
+        "title": "Akut Dekompanse Kalp Yetmezliği",
+        "patient_profile": {
+          "age": 72,
+          "gender": "kadın",
+          "chief_complaint": "Nefes darlığı ve ayaklarda şişlik",
+          "history": "1 haftadır artan nefes darlığı, geceleri yastık sayısı artırdı",
+          "past_medical_history": ["hipertansiyon", "diyabet", "geçirilmiş MI"],
+          "vital_signs": {
+            "blood_pressure": "110/70",
+            "heart_rate": 110,
+            "respiratory_rate": 28,
+            "temperature": 36.8,
+            "oxygen_saturation": 88,
+            "jvp": "12 cm"
+          },
+          "physical_exam": {
+            "cardiovascular": "S3 gallop, murmur yok",
+            "respiratory": "Bilateral bazal raller",
+            "extremities": "Bilateral pretibial ödem (2+)",
+            "abdomen": "Hepatomegali (+)"
+          },
+          "laboratory": {
+            "bnp": "2400 pg/mL",
+            "creatinine": "1.8 mg/dL",
+            "potassium": "3.8 mEq/L",
+            "hemoglobin": "10.2 g/dL"
+          },
+          "imaging": {
+            "chest_xray": "Kardiyomegali, pulmoner ödem",
+            "echo": "EF: 25%, global hipokinezi"
+          }
+        },
+        "correct_diagnosis": "NYHA Sınıf IV Kalp Yetmezliği",
+        "treatment_plan": [
+          "Furosemid 40mg IV",
+          "ACE inhibitörü titrasyonu",
+          "Beta-bloker (düşük doz)",
+          "Sıvı kısıtlaması"
+        ]
+      }
+    ]
+  }
+}

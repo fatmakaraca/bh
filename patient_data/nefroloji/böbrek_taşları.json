@@ -1,0 +1,112 @@
+{
+  "disease_info": {
+    "id": "böbrek_taşları",
+    "name": "Böbrek Taşları (Nefrolitiyazis)",
+    "specialty": "nefroloji",
+    "difficulty": "orta",
+    "description": "İdrar yollarında mineral kristallerinin birikimi",
+    "learning_objectives": [
+      "Renal kolik tanısı",
+      "Görüntüleme yöntemleri seçimi",
+      "Taş kompozisyonu değerlendirmesi",
+      "Medikal ekspulsif terapi"
+    ],
+    "cases": [
+      {
+        "case_id": "NEFRO_STONE_001",
+        "title": "Akut Renal Kolik",
+        "patient_profile": {
+          "age": 42,
+          "gender": "erkek",
+          "chief_complaint": "Şiddetli yan ağrısı kasığa yayılan",
+          "history": "6 saat önce ani başlayan şiddetli sağ yan ağrısı",
+          "pain_characteristics": "Kolik tarzda, dalga halinde, pozisyon değişimi ile azalmıyor",
+          "symptoms": {
+            "flank_pain": "Şiddetli sağ yan ağrısı (10/10)",
+            "radiation": "Kasığa ve testise yayılım",
+            "colicky_nature": "Dalga halinde artan ağrı",
+            "nausea": "Şiddetli bulantı",
+            "vomiting": "3 kez kusma",
+            "hematuria": "Gözle görülür hematüri",
+            "dysuria": "Hafif dizüri",
+            "urgency": "İdrar aciliyeti",
+            "restlessness": "Huzursuzluk, pozisyon bulamama"
+          },
+          "risk_factors": [
+            "Erkek cinsiyet",
+            "Dehidratasyon",
+            "Yüksek sodyum diyeti",
+            "Ailede taş öyküsü"
+          ],
+          "medical_history": [
+            "5 yıl önce böbrek taşı öyküsü",
+            "Hipertansiyon",
+            "Düşük sıvı alımı"
+          ],
+          "vital_signs": {
+            "blood_pressure": "165/95",
+            "heart_rate": 105,
+            "respiratory_rate": 20,
+            "temperature": 36.8,
+            "pain_score": "10/10"
+          },
+          "physical_exam": {
+            "general": "Ağrı nedeniyle huzursuz",
+            "abdomen": "Normal, hassasiyet yok",
+            "costovertebral_angle": "Sağ CVAT pozitif",
+            "genitourinary": "Normal",
+            "neurological": "Normal"
+          },
+          "laboratory": {
+            "urinalysis": {
+              "rbc": ">50/hpf (makroskopik hematüri)",
+              "wbc": "5-10/hpf",
+              "crystals": "Kalsiyum oksalat kristalleri",
+              "bacteria": "Yok"
+            },
+            "complete_blood_count": "Normal",
+            "creatinine": "1.2 mg/dL",
+            "urea": "35 mg/dL"
+          },
+          "imaging": {
+            "noncontrast_ct": {
+              "findings": "Sağ üreterovesical junction'da 6mm taş",
+              "hydronephrosis": "Hafif hidronefroz",
+              "stone_density": "1200 HU (kalsiyum oksalat)"
+            },
+            "renal_ultrasound": "Sağ böbrekte hafif dilatasyon"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "42 yaşında erkek hasta, akut renal kolik atağı ile başvurdu.",
+          "stone_characteristics": "6mm üreterovesical junction taşı"
+        },
+        "correct_diagnosis": "Böbrek Taşı - Akut Renal Kolik",
+        "treatment_plan": [
+          "IV analjezi (NSAİD: Diclofenac 75mg)",
+          "Antiemetik (Ondansetron)",
+          "Medikal ekspulsif terapi (Tamsulosin 0.4mg/gün)",
+          "Bol sıvı alımı (3-4 L/gün)",
+          "İdrar süzme",
+          "1 hafta sonra kontrol"
+        ],
+        "learning_points": [
+          "Renal kolik karakteristik ağrı paterni",
+          "Kontrastsız BT tanı standardı",
+          "Medikal ekspulsif terapi endikasyonları"
+        ],
+        "complications": [
+          "Obstrüksiyon",
+          "Enfeksiyon",
+          "Böbrek fonksiyon kaybı"
+        ],
+        "prevention": [
+          "Yeterli hidratasyon (>2.5 L/gün)",
+          "Düşük sodyum diyeti",
+          "Kalsiyum kısıtlaması değil",
+          "Sitrat suplementasyonu"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "disease_info": {
+    "id": "tip2_diyabet_mellitus",
+    "name": "Tip 2 Diyabet Mellitus",
+    "specialty": "endokrinoloji",
+    "difficulty": "orta",
+    "description": "İnsulin direnci ve/veya beta hücre fonksiyon bozukluğu ile karakterize metabolik hastalık",
+    "learning_objectives": [
+      "Diyabet tanı kriterleri",
+      "HbA1c hedeflerinin belirlenmesi",
+      "Metformin ve diğer antidiyabetiklerin kullanımı",
+      "Komplikasyon taraması"
+    ],
+    "cases": [
+      {
+        "case_id": "ENDO_T2DM_001",
+        "title": "Yeni Tanı Tip 2 Diyabet",
+        "patient_profile": {
+          "age": 48,
+          "gender": "kadın",
+          "chief_complaint": "Son 3 ayda çok susama ve sık idrara çıkma",
+          "history": "Kademeli başlayan poliüri, polidipsi ve yorgunluk",
+          "symptom_characteristics": {
+            "polyuria": "Günde 8-10 kez idrara çıkma",
+            "polydipsia": "Günde 4-5 litre su içme",
+            "fatigue": "Belirgin yorgunluk",
+            "weight_change": "2 kg kilo artışı",
+            "blurred_vision": "Zaman zaman bulanık görme"
+          },
+          "symptoms": {
+            "polyuria": "Günde >3L idrar",
+            "polydipsia": "Aşırı susama",
+            "fatigue": "Kronik yorgunluk",
+            "weight_gain": "2 kg artış (3 ayda)",
+            "recurrent_infections": "Vajinal mantar enfeksiyonu (2 kez)"
+          },
+          "risk_factors": [
+            "Yaş >45",
+            "Obezite (BMI: 33)",
+            "Sedanter yaşam",
+            "Aile öyküsü (anne diyabetik)",
+            "Gestasyonel diyabet öyküsü",
+            "PCOS",
+            "Hipertansiyon"
+          ],
+          "family_history": {
+            "diabetes": "Anne tip 2 DM",
+            "cardiovascular": "Baba hipertansiyon",
+            "other": "Kardeş obezite"
+          },
+          "medical_history": [
+            "Gestasyonel diyabet (12 yıl önce)",
+            "PCOS tanısı",
+            "Hipertansiyon (3 yıl)",
+            "Dislipidemi"
+          ],
+          "medications": [
+            "Lisinopril 10mg/gün",
+            "Atorvastatin 20mg/gün",
+            "Metformin 500mg 2x1 (3 hafta önce başlandı)"
+          ],
+          "social_history": {
+            "occupation": "Sekreter (masa başı iş)",
+            "exercise": "Düzensiz, haftada 1-2 kez yürüyüş",
+            "diet": "Düzensiz beslenme, karbonhidrat ağırlıklı",
+            "smoking": "Yok",
+            "alcohol": "Sosyal içici"
+          },
+          "vital_signs": {
+            "blood_pressure": "145/90",
+            "heart_rate": 78,
+            "respiratory_rate": 16,
+            "temperature": 36.8,
+            "weight": "88 kg",
+            "height": "162 cm",
+            "bmi": "33.5",
+            "waist_circumference": "102 cm"
+          },
+          "physical_exam": {
+            "general": "Obez, genel durumu iyi",
+            "head_neck": {
+              "acanthosis_nigricans": "Boyun arkasında hiperpigmentasyon",
+              "thyroid": "Normal"
+            },
+            "cardiovascular": "Normal S1S2, murmur yok",
+            "respiratory": "Normal solunum sesleri",
+            "abdomen": "Obez, hepatomegali yok",
+            "extremities": {
+              "feet": "Normal, yara yok",
+              "pedal_pulses": "Palpable",
+              "sensation": "Vibrasyon ve dokunma normal"
+            },
+            "neurologic": "Derin tendon refleksleri normal"
+          },
+          "laboratory": {
+            "glucose_metabolism": {
+              "fasting_glucose": "156 mg/dL (yüksek)",
+              "random_glucose": "245 mg/dL",
+              "hba1c": "8.2% (yüksek)",
+              "c_peptide": "2.1 ng/mL (normal)",
+              "fasting_insulin": "18 µU/mL (yüksek)"
+            },
+            "lipid_profile": {
+              "total_cholesterol": "245 mg/dL",
+              "ldl": "155 mg/dL (yüksek)",
+              "hdl": "38 mg/dL (düşük)",
+              "triglycerides": "285 mg/dL (yüksek)"
+            },
+            "renal_function": {
+              "creatinine": "0.9 mg/dL",
+              "egfr": ">90 mL/min/1.73m²",
+              "microalbumin": "45 mg/g kreatinin (normal <30)"
+            },
+            "liver_function": "Normal",
+            "thyroid_function": {
+              "tsh": "2.5 mIU/L (normal)",
+              "free_t4": "Normal"
+            }
+          },
+          "diagnostic_tests": {
+            "fundoscopy": "Normal, diabetik retinopati yok",
+            "ecg": "Normal sinüs ritmi",
+            "urine_analysis": "Glukozüri +3, protein eser"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "48 yaşında kadın hasta, poliüri ve polidipsi ile başvurdu.",
+          "diagnostic_criteria": "ADA kriterlerine göre tip 2 diyabet tanısı"
+        },
+        "correct_diagnosis": "Tip 2 Diyabet Mellitus (Yeni tanı, kontrol altında değil)",
+        "differential_diagnosis": [
+          "Tip 1 diyabet",
+          "MODY",
+          "Sekonder diyabet",
+          "Diyabet insipidus"
+        ],
+        "treatment_plan": [
+          "Yaşam tarzı değişiklikleri:",
+          "- Diyetisyen konsültasyonu",
+          "- Düzenli egzersiz programı",
+          "- Kilo verme hedefi (%5-10)",
+          "Farmakolojik tedavi:",
+          "- Metformin 1000mg 2x1 (doz artışı)",
+          "- DPP-4 inhibitörü eklenmesi düşünülecek",
+          "Kardiyovasküler koruma:",
+          "- ACE inhibitörü devam",
+          "- Statin devam",
+          "- Aspirin 100mg/gün eklenmesi"
+        ],
+        "learning_points": [
+          "ADA tanı kriterlerinin uygulanması",
+          "Metformin contraindications",
+          "HbA1c hedef belirleme"
+        ],
+        "monitoring_schedule": [
+          "HbA1c: 3 ayda bir",
+          "Lipid profili: 6 ayda bir",
+          "Mikroalbumin: Yılda bir",
+          "Fundoskopi: Yılda bir",
+          "Ayak muayenesi: 6 ayda bir"
+        ],
+        "complications_screening": [
+          "Diabetik retinopati: Oftalmoloji konsültasyonu",
+          "Diabetik nefropati: Mikroalbumin takibi",
+          "Diabetik nöropati: Monofilament testi",
+          "Kardiyovasküler hastalık: EKG, lipid profili"
+        ],
+        "targets": {
+          "hba1c": "<7% (genel hedef)",
+          "blood_pressure": "<140/90 mmHg",
+          "ldl_cholesterol": "<100 mg/dL",
+          "weight_loss": "5-10% ilk yıl"
+        }
+      }
+    ]
+  }
+}

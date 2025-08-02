@@ -1,0 +1,182 @@
+{
+  "disease_info": {
+    "id": "gastroozofageal_reflu_hastaligi",
+    "name": "Gastroözofageal Reflü Hastalığı (GÖRH)",
+    "specialty": "gastroenteroloji",
+    "difficulty": "orta",
+    "description": "Mide içeriğinin özofagusa geri kaçması sonucu gelişen kronik hastalık",
+    "learning_objectives": [
+      "GÖRH tanı kriterleri",
+      "PPI tedavisinin etkinliği",
+      "Endoskopi endikasyonları",
+      "Barrett özofagusu tanınması"
+    ],
+    "cases": [
+      {
+        "case_id": "GASTRO_GERD_001",
+        "title": "Tipik GÖRH",
+        "patient_profile": {
+          "age": 45,
+          "gender": "erkek",
+          "chief_complaint": "6 aydır göğüs kemiği arkasında yanma hissi",
+          "history": "Yemek sonrası ve yatarken artan yanma hissi, ağza ekşi su gelmesi",
+          "symptom_characteristics": {
+            "pyrosis": "Göğüs kemiği arkasında yanma (yemek sonrası kötüleşen)",
+            "regurgitation": "Ağıza ekşi tat gelmesi",
+            "timing": "Yatarken ve eğilmede artış",
+            "trigger_foods": "Baharatlı, asitli, yağlı yemekler",
+            "duration": "6 ay"
+          },
+          "symptoms": {
+            "heartburn": "Retrosternal yanma hissi (VAS: 7/10)",
+            "acid_regurgitation": "Ağıza ekşi sıvı gelmesi",
+            "dysphagia": "Zaman zaman yutma güçlüğü",
+            "chronic_cough": "Özellikle gece kronik öksürük",
+            "hoarseness": "Sabahları ses kısıklığı",
+            "chest_pain": "Non-kardiyak göğüs ağrısı"
+          },
+          "associated_symptoms": {
+            "nocturnal_symptoms": "Gece uyanma",
+            "dental_erosion": "Diş erimesi",
+            "halitosis": "Ağız kokusu",
+            "throat_clearing": "Sürekli boğaz temizleme"
+          },
+          "risk_factors": [
+            "Obezite (BMI: 32)",
+            "Hiatal herni",
+            "Sigara (günde 1 paket, 15 yıl)",
+            "Alkol tüketimi",
+            "Stresli yaşam tarzı",
+            "Düzensiz beslenme"
+          ],
+          "trigger_factors": [
+            "Baharatlı yemekler",
+            "Domates, narenciye",
+            "Çikolata, kahve",
+            "Yağlı yemekler",
+            "Yemek sonrası hemen yatma",
+            "Büyük porsiyonlar"
+          ],
+          "medical_history": [
+            "Hiatal herni",
+            "Tip 2 diyabet",
+            "Hipertansiyon"
+          ],
+          "medications": [
+            "Metformin 1000mg 2x1",
+            "Amlodipine 5mg/gün",
+            "Antasit (gerektiğinde)"
+          ],
+          "social_history": {
+            "occupation": "Muhasebeci (stresli iş)",
+            "smoking": "1 paket/gün (15 yıl)",
+            "alcohol": "Haftalık 3-4 birayı",
+            "exercise": "Minimal",
+            "diet": "Düzensiz, hızlı yemek yeme"
+          },
+          "vital_signs": {
+            "blood_pressure": "140/85",
+            "heart_rate": 78,
+            "respiratory_rate": 16,
+            "temperature": 36.7,
+            "weight": "95 kg",
+            "height": "175 cm",
+            "bmi": "31.0"
+          },
+          "physical_exam": {
+            "general": "Obez, genel durum iyi",
+            "abdomen": {
+              "inspection": "Obez, distansiyon yok",
+              "palpation": "Epigastrik hafif hassasiyet",
+              "percussion": "Normal",
+              "auscultation": "Normal bağırsak sesleri"
+            },
+            "cardiovascular": "Normal S1S2, murmur yok",
+            "respiratory": "Bilateral normal solunum sesleri",
+            "throat": "Hafif posterior farinks erithemi"
+          },
+          "laboratory": {
+            "complete_blood_count": "Normal",
+            "helicobacter_pylori": {
+              "stool_antigen": "Negatif",
+              "urea_breath_test": "Negatif"
+            },
+            "liver_function": "Normal",
+            "glucose": "145 mg/dL (hafif yüksek)"
+          },
+          "imaging": {
+            "upper_endoscopy": {
+              "esophagus": {
+                "findings": "Grade B özofajit (Los Angeles sınıflaması)",
+                "mucosa": "Distal özofagusta lineer erozyon",
+                "barrett": "Yok"
+              },
+              "stomach": "Hiatal herni, hafif antral gastrit",
+              "duodenum": "Normal"
+            },
+            "barium_swallow": {
+              "findings": "Hiatal herni, reflü görüntülendi",
+              "stricture": "Yok"
+            },
+            "ph_monitoring": {
+              "demeester_score": "18.5 (normal <14.72)",
+              "acid_exposure_time": "6.8% (normal <4.2%)",
+              "total_reflux_episodes": "145 (yüksek)"
+            }
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "45 yaşında erkek hasta, kronik heartburn ve regürjitasyon ile başvurdu.",
+          "typical_symptoms": "Pirozis + regürjitasyon + postural ilişki"
+        },
+        "correct_diagnosis": "Gastroözofageal Reflü Hastalığı (GÖRH) - Grade B Özofajit",
+        "differential_diagnosis": [
+          "Funktional heartburn",
+          "Eozinofilik özofajit",
+          "Kardiyak göğüs ağrısı",
+          "Peptic ülser hastalığı",
+          "Özofagus malignitesi"
+        ],
+        "treatment_plan": [
+          "Yaşam tarzı değişiklikleri:",
+          "- Kilo verme (%10 hedef)",
+          "- Tetikleyici gıdalardan kaçınma",
+          "- Yemek sonrası 3 saat yatmama",
+          "- Yatak başını yükseltme (15-20 cm)",
+          "- Küçük porsiyonlar, yavaş yeme",
+          "Farmakolojik tedavi:",
+          "- PPI: Omeprazol 20mg/gün aç karnına",
+          "- 8 hafta sonra değerlendirme",
+          "- Yanıt alınamaz ise endoskopi",
+          "Diğer öneriler:",
+          "- Sigarayı bırakma",
+          "- Alkol kısıtlaması"
+        ],
+        "learning_points": [
+          "PPI tedavisine yanıt tanısal değer taşır",
+          "Los Angeles sınıflaması",
+          "pH monitorizasyonu endikasyonları"
+        ],
+        "complications": [
+          "Barrett özofagusu",
+          "Özofageal striktür",
+          "Özofageal adenokarsinom",
+          "Aspirasyon pnömonisi",
+          "Dental erozyon"
+        ],
+        "monitoring": [
+          "Semptom yanıtı (2-4 hafta)",
+          "PPI doz ayarı",
+          "Barrett surveillance (varsa)",
+          "H. pylori eradikasyonu kontrolü"
+        ],
+        "prognosis": [
+          "PPI ile %80-90 semptom kontrolü",
+          "Yaşam tarzı değişiklikleri kritik",
+          "Kronik hastalık - uzun dönem tedavi",
+          "Barrett gelişimi <%10"
+        ]
+      }
+    ]
+  }
+}

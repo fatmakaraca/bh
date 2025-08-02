@@ -1,0 +1,101 @@
+{
+  "disease_info": {
+    "id": "akut_böbrek_hasarı",
+    "name": "Akut Böbrek Hasarı (ABH)",
+    "specialty": "nefroloji",
+    "difficulty": "orta",
+    "description": "Böbrek fonksiyonlarında ani ve geçici bozulma",
+    "learning_objectives": [
+      "ABH sınıflandırması (prerenal, renal, postrenal)",
+      "Kreatinin yüksekliği değerlendirmesi",
+      "FENa hesaplama ve yorumlama",
+      "Diyaliz endikasyonları"
+    ],
+    "cases": [
+      {
+        "case_id": "NEFRO_AKI_001",
+        "title": "Prerenal Azotemi",
+        "patient_profile": {
+          "age": 72,
+          "gender": "kadın",
+          "chief_complaint": "Azalmış idrar çıkışı ve ödem",
+          "history": "3 gündür bulantı, kusma sonrası idrar azalması",
+          "precipitating_factors": ["dehidratasyon", "gastroenterit", "diüretik kullanımı"],
+          "symptoms": {
+            "oliguria": "24 saatte 300 mL idrar (<0.5 mL/kg/saat)",
+            "edema": "Yüz, el ve ayaklarda ödem",
+            "dyspnea": "Nefes darlığı",
+            "nausea": "Bulantı",
+            "vomiting": "Kusma",
+            "fatigue": "Şiddetli yorgunluk",
+            "confusion": "Hafif bilinç bulanıklığı"
+          },
+          "medical_history": [
+            "Hipertansiyon (ACE inhibitörü kullanıyor)",
+            "Osteoartrit (NSAİD kullanımı)",
+            "3 gün önce gastroenterit"
+          ],
+          "medications": [
+            "Lisinopril 10mg/gün",
+            "Furosemid 40mg/gün",
+            "İbuprofen 600mg (ağrı için)"
+          ],
+          "vital_signs": {
+            "blood_pressure": "90/60",
+            "heart_rate": 110,
+            "respiratory_rate": 24,
+            "temperature": 36.8,
+            "weight": "68 kg (+3 kg)",
+            "jvp": "Düşük"
+          },
+          "physical_exam": {
+            "general": "Dehidrate görünüm, hasta",
+            "cardiovascular": "Taşikardik, JVP düşük",
+            "respiratory": "Bilateral bazal raller",
+            "abdomen": "Normal, CVA tenderness yok",
+            "extremities": "Bilateral pitting ödem (2+)",
+            "skin": "Turgor azalmış"
+          },
+          "laboratory": {
+            "creatinine": "3.2 mg/dL (baseline: 1.1)",
+            "bun": "85 mg/dL",
+            "bun_creatinine_ratio": "26.5 (>20)",
+            "potassium": "5.8 mEq/L",
+            "urinalysis": {
+              "specific_gravity": "1.025 (konsantre)",
+              "protein": "1+",
+              "sediment": "Hyalin silindir"
+            },
+            "urine_sodium": "8 mEq/L",
+            "fractional_sodium_excretion": "0.3% (<1% prerenal)"
+          },
+          "imaging": {
+            "renal_ultrasound": "Normal boyut böbrekler, hidronefroz yok"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "72 yaşında kadın hasta, dehidratasyon sonrası ABH ile başvurdu.",
+          "classification": "Prerenal azotemi"
+        },
+        "correct_diagnosis": "Akut Böbrek Hasarı - Prerenal tip",
+        "treatment_plan": [
+          "Nefrotoksik ilaçları kes (ACE-i, NSAİD)",
+          "Sıvı replasman (normal salin)",
+          "Elektrolit dengesizlik düzeltimi",
+          "İdrar çıkışı monitörizasyonu",
+          "Kreatinin takibi"
+        ],
+        "learning_points": [
+          "Prerenal vs renal ABH ayrımı",
+          "FENa hesaplama önemi",
+          "Nefrotoksik ilaç etkisi"
+        ],
+        "prevention": [
+          "Yeterli hidratasyon",
+          "Nefrotoksik ilaç kaçınma",
+          "Risk faktörü kontrolü"
+        ]
+      }
+    ]
+  }
+}

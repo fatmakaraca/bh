@@ -1,0 +1,216 @@
+{
+  "disease_info": {
+    "id": "hipertiroidi",
+    "name": "Hipertiroidi",
+    "specialty": "endokrinoloji",
+    "difficulty": "orta",
+    "description": "Aşırı tiroid hormon üretimi ile karakterize endokrin hastalık",
+    "learning_objectives": [
+      "Hipertiroidi tanı kriterleri",
+      "Graves vs toksik nodüler guatr ayırımı",
+      "Antitiroid ilaçların kullanımı",
+      "Tiroid fırtınası tanı ve tedavisi"
+    ],
+    "cases": [
+      {
+        "case_id": "ENDO_HYPER_001",
+        "title": "Graves Hastalığı",
+        "patient_profile": {
+          "age": 28,
+          "gender": "kadın",
+          "chief_complaint": "2 aydır çarpıntı, kilo kaybı ve titreme",
+          "history": "Hızlı başlangıçlı çarpıntı, kilo kaybı ve heat intoleransı",
+          "symptom_onset": "2 ay önce ani başlangıç",
+          "symptom_progression": "Hızlı ilerleyen",
+          "symptoms": {
+            "palpitations": "İstirahat halinde çarpıntı",
+            "weight_loss": "2 ayda 7 kg kilo kaybı",
+            "heat_intolerance": "Aşırı sıcak hissetme",
+            "tremor": "El titremesi",
+            "anxiety": "Anksiyete, huzursuzluk",
+            "insomnia": "Uykusuzluk",
+            "increased_appetite": "Artmış iştah",
+            "frequent_bowel_movements": "Günde 4-5 kez defekasyon",
+            "muscle_weakness": "Kas güçsüzlüğü"
+          },
+          "eye_symptoms": {
+            "exophthalmos": "Gözlerde dışarı çıkma",
+            "diplopia": "Çift görme",
+            "eye_pain": "Göz ağrısı",
+            "photophobia": "Işık hassasiyeti",
+            "lacrimation": "Gözyaşı artışı"
+          },
+          "menstrual_history": {
+            "amenorrhea": "2 aydır adet görmeme",
+            "previous_cycles": "Daha önce düzenli"
+          },
+          "family_history": {
+            "thyroid": "Annesinde hipotiroidi",
+            "autoimmune": "Babaannesinde romatoid artrit"
+          },
+          "medical_history": [
+            "Daha önce tiroid hastalığı yok",
+            "Sağlıklı"
+          ],
+          "medications": "Hiçbir ilaç kullanmıyor",
+          "social_history": {
+            "occupation": "Grafik tasarımcı",
+            "stress": "Son 3 ayda yoğun iş stresi",
+            "smoking": "Günde 1 paket (10 yıl)",
+            "alcohol": "Sosyal içici",
+            "exercise": "Eskiden düzenli, artık yorgunluk nedeniyle yok"
+          },
+          "review_of_systems": {
+            "constitutional": "Kilo kaybı, heat intoleransı",
+            "cardiovascular": "Çarpıntı, göğüs ağrısı yok",
+            "gastrointestinal": "Sık defekasyon",
+            "neurologic": "Titreme, anksiyete",
+            "ophthalmologic": "Exophthalmos, diplopia"
+          },
+          "vital_signs": {
+            "blood_pressure": "145/85 (sistolik hipertansiyon)",
+            "heart_rate": 125,
+            "respiratory_rate": 20,
+            "temperature": 37.4,
+            "weight": "52 kg (2 ay önce 59 kg)",
+            "height": "168 cm",
+            "bmi": "18.4"
+          },
+          "physical_exam": {
+            "general": "Hiperaktif, huzursuz, zayıf görünüm",
+            "head_neck": {
+              "eyes": {
+                "exophthalmos": "Bilateral belirgin proptoz",
+                "lid_retraction": "Üst kapak retraksiyonu",
+                "lid_lag": "Kapak lag pozitif",
+                "extraocular_movements": "Yukarı bakış kısıtlılığı"
+              },
+              "thyroid": {
+                "inspection": "Diffüz büyüme görünür",
+                "palpation": "Diffüz, simetrik büyüme",
+                "consistency": "Yumuşak",
+                "nodules": "Palpable nodül yok",
+                "bruit": "Vasküler üfürüm duyuluyor"
+              }
+            },
+            "cardiovascular": {
+              "heart_rate": "Taşikardik",
+              "rhythm": "Düzenli",
+              "murmur": "Sistemik üfürüm (hiperdinamik)"
+            },
+            "respiratory": "Normal solunum sesleri",
+            "abdomen": "Normal",
+            "extremities": {
+              "tremor": "Bilateral ince tremor",
+              "muscle_strength": "Proksimal kas güçsüzlüğü",
+              "reflexes": "Hiperaktif derin tendon refleksleri"
+            },
+            "skin": {
+              "texture": "Nemli, sıcak",
+              "pretibial_myxedema": "Yok"
+            }
+          },
+          "laboratory": {
+            "thyroid_function": {
+              "tsh": "<0.01 mIU/L (çok düşük, normal 0.4-4.0)",
+              "free_t4": "4.8 ng/dL (çok yüksek, normal 0.8-1.8)",
+              "free_t3": "8.5 pg/mL (çok yüksek, normal 2.3-4.2)",
+              "total_t3": "350 ng/dL (yüksek)"
+            },
+            "thyroid_antibodies": {
+              "trab": "25 IU/L (çok yüksek, normal <1.75)",
+              "anti_tpo": "145 IU/mL (yüksek)",
+              "anti_thyroglobulin": "Normal"
+            },
+            "complete_blood_count": {
+              "hemoglobin": "12.8 g/dL (normal)",
+              "wbc": "Normal",
+              "platelets": "Normal"
+            },
+            "biochemistry": {
+              "glucose": "110 mg/dL (hafif yüksek)",
+              "calcium": "10.8 mg/dL (hafif yüksek)",
+              "liver_enzymes": "Hafif yüksek (ALT: 65 IU/L)",
+              "cholesterol": "145 mg/dL (düşük)"
+            }
+          },
+          "imaging": {
+            "thyroid_ultrasound": {
+              "size": "Diffüz büyüme",
+              "echogenicity": "Hipoekojenik",
+              "vascularity": "Belirgin artmış (thyroid inferno)",
+              "nodules": "Yok"
+            },
+            "thyroid_scintigraphy": {
+              "uptake": "%65 (yüksek, normal %10-30)",
+              "pattern": "Diffüz homojen uptake",
+              "diagnosis": "Graves hastalığı ile uyumlu"
+            },
+            "orbital_mri": {
+              "extraocular_muscles": "Inferior ve medial rektus kalınlaşması",
+              "orbital_fat": "Artmış",
+              "optic_nerve": "Normal"
+            }
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "28 yaşında kadın hasta, hipertiroid semptomlar ve exophthalmos ile başvurdu.",
+          "key_findings": "Graves oftalmopati + diffüz guatr + yüksek TRAb"
+        },
+        "correct_diagnosis": "Graves Hastalığı (Graves Oftalmopati ile)",
+        "differential_diagnosis": [
+          "Toksik multinodüler guatr",
+          "Toksik adenoma",
+          "Subakut tiroidit",
+          "İlaç ilişkili hipertiroidi",
+          "Factitious hipertiroidi"
+        ],
+        "treatment_plan": [
+          "Antitiroid tedavi:",
+          "- Methimazole 20mg/gün (başlangıç)",
+          "- Propranolol 40mg 2x1 (semptomatik)",
+          "Beta bloker:",
+          "- Taşikardi ve tremor kontrolü",
+          "Graves oftalmopati:",
+          "- Prednizolon 1mg/kg (aktif oftalmopatide)",
+          "- Oftalmoloji konsültasyonu",
+          "- Sigarayı bırakma (çok önemli)",
+          "Takip:",
+          "- 4-6 hafta sonra tiroid fonksiyonları",
+          "- Methimazole doz ayarı"
+        ],
+        "learning_points": [
+          "TRAb tanısal değeri",
+          "Graves oftalmopati yönetimi",
+          "Antitiroid ilaç seçimi"
+        ],
+        "complications": [
+          "Tiroid fırtınası",
+          "Graves oftalmopati progresyonu",
+          "Atrial fibrilasyon",
+          "Osteoporoz",
+          "Agranulocytosis (methimazole)"
+        ],
+        "monitoring": [
+          "Tiroid fonksiyonları: 4-6 hafta",
+          "Tam kan sayımı: Aylık (ilk 3 ay)",
+          "Karaciğer fonksiyonları",
+          "Oftalmolojik muayene",
+          "Kemik yoğunluğu"
+        ],
+        "treatment_options": [
+          "Medikal: Methimazole 12-18 ay",
+          "Radioaktif iyot: Kalıcı hipertiroidi",
+          "Cerrahi: Total tiroidektomi",
+          "Oftalmopati: Steroid, radyoterapi, cerrahi"
+        ],
+        "prognosis": [
+          "Medikal tedavi: %30-50 remisyon",
+          "Oftalmopati: Çoğu vakada stabil kalır",
+          "Gebelik: Dikkatli takip gerekir",
+          "Long-term: Hipotiroidi riski"
+        ]
+      }
+    ]
+  }
+}
