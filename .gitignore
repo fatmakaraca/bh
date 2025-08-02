@@ -1,0 +1,6 @@
+# Ortak gereksiz dosyalar
+__pycache__/
+*.pyc
+
+# Ortam değişkenleri dosyası
+.env
