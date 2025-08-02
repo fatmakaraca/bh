@@ -27,7 +27,8 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 app = FastAPI()
 
 # Redis bağlantısı
-r = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
+REDIS_URL = os.getenv("REDIS_URL")
+r = redis.from_url(REDIS_URL, decode_responses=True)
 
 # MODELLER
 class MessageInput(BaseModel):
@@ -213,3 +214,4 @@ def submit_diagnosis(data: DiagnosisInput):
         "session_id": session_id,
         "diagnosis": diagnosis
     }
+
