@@ -9,6 +9,8 @@ import time
 from dotenv import load_dotenv
 from google.api_core.exceptions import ResourceExhausted
 from fastapi import Query
+from fastapi.middleware.cors import CORSMiddleware
+
 
 from patient_agent import (
     load_random_patient,
@@ -25,6 +27,14 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # FastAPI örneği
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Güvenliğin önemli olduğu durumlarda bu kısmı sınırlandır
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Redis bağlantısı
 REDIS_URL = os.getenv("REDIS_URL")
@@ -214,4 +224,5 @@ def submit_diagnosis(data: DiagnosisInput):
         "session_id": session_id,
         "diagnosis": diagnosis
     }
+
 
