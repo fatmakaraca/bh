@@ -44,13 +44,24 @@ def load_random_patient(area: str, base_path="./patient_data"):
 # sistem promptu hazırlama
 def create_system_prompt(patient_data, doctor_gender):
     profile = patient_data.get("patient_profile", {})
-    diagnostics = patient_data.get("diagnostic_tests", {})
 
-    # Semptomlar (chief_complaint'ten al)
-    symptoms = profile.get("symptoms", "Belirtilmemiş")
+    name = profile.get("name", "Bilinmiyor")
+    age = profile.get("age", "Bilinmiyor")
+    gender = profile.get("gender", "Bilinmiyor")
+
+    # Yaş birimi opsiyonel
+    age_unit = profile.get("age_unit", "")
+    age_str = f"{age} {age_unit}".strip()
+
+    # Semptomlar (sözlükse düzleştir)
+    symptoms_raw = profile.get("symptoms", {})
+    if isinstance(symptoms_raw, dict):
+        symptoms = ", ".join([f"{k}: {v}" for k, v in symptoms_raw.items()])
+    else:
+        symptoms = symptoms_raw or "Belirtilmemiş"
 
     # Tıbbi geçmiş
-    history_raw = profile.get("history")
+    history_raw = profile.get("medical_history")
     if isinstance(history_raw, list):
         history = ", ".join(history_raw)
     elif isinstance(history_raw, str):
@@ -58,36 +69,65 @@ def create_system_prompt(patient_data, doctor_gender):
     else:
         history = "Yok"
 
-    # Laboratuvar sonuçları
-    lab_data = diagnostics.get("laboratory")
-    if isinstance(lab_data, dict):
-        lab_str = ", ".join([f"{k}: {v}" for k, v in lab_data.items()])
-    elif isinstance(lab_data, str):
-        lab_str = lab_data
+    # Güncel hikaye (history)
+    patient_story = profile.get("history", "Belirtilmemiş")
+
+    # Vital bulgular
+    vitals = profile.get("vital_signs", {})
+    vitals_str = ", ".join([f"{k}: {v}" for k, v in vitals.items()]) if vitals else "Yok"
+
+    # Fizik muayene
+    physical = profile.get("physical_exam", {})
+    physical_str = ", ".join([f"{k}: {v}" for k, v in physical.items()]) if physical else "Yok"
+
+    # Laboratuvar
+    lab = profile.get("laboratory", {})
+    lab_str = ", ".join([f"{k}: {v}" for k, v in lab.items()]) if lab else "Yok"
+
+    # Görüntüleme verisi varsa
+    images = profile.get("imaging", {})
+    image_str = ", ".join([f"{k}: {v}" for k, v in images.items()]) if images else "Yok"
+
+    # İlaçlar
+    meds = profile.get("medications", [])
+    meds_str = ", ".join(meds) if meds else "Yok"
+
+    # Aile öyküsü
+    family_history_raw = profile.get("family_history")
+    if isinstance(family_history_raw, list):
+        family_history = ", ".join(family_history_raw)
+    elif isinstance(family_history_raw, str):
+        family_history = family_history_raw
     else:
-        lab_str = "Yok"
+        family_history = "Yok"
 
-    # Yaş
-    age = profile.get("age", "Bilinmiyor")
-    age_unit = profile.get("age_unit", "")  # opsiyonel
-    age_str = f"{age} {age_unit}".strip()
+    # Sosyal öykü
+    social = profile.get("social_history", [])
+    social_str = ", ".join(social) if social else "Yok"
 
-    # Cinsiyet
-    gender = profile.get("gender", "Bilinmiyor")
+    # Doktora hitap
+    honorific = "Doktor Hanım" if doctor_gender == "kadın" else "Doktor Bey"
+
 
     prompt = f"""
-    Sen gerçek bir hastasın. Tıp öğrencisi seninle görüşüyor. 
-    Doktorun cinsiyeti: {doctor_gender}. Doktora hitap etmen gerekirse doktor kadınsa, "Doktor Hanım" şeklinde, erkekse "Doktor Bey" şeklinde hitap et.
-    Sana ait bilgiler:
-    Yaş: {age_str}
-    Cinsiyet: {profile.get("gender", "Bilinmiyor")}
-    Semptomlar: {symptoms}
-    Tıbbi geçmiş: {history}
-    Laboratuvar sonuçları: {lab_str}
+    Sen gerçek bir hastasın. Bir tıp öğrencisi seninle görüşme yapıyor. 
+    Doktorun cinsiyeti: {doctor_gender}. Ona hitap ederken "{honorific}" şeklinde seslen.
 
+    Aşağıdaki bilgiler sana aittir:
+
+    👤 **Ad**: {name}  
+    📅 **Yaş**: {age_str}  
+    🚻 **Cinsiyet**: {gender}  
+    🤒 **Semptomlar**: {symptoms} 
+    Güncel Hikaye: {patient_story} 
+    📖 **Tıbbi Geçmiş**: {history}  
+    👨‍👩‍👧 **Aile Öyküsü**: {family_history}  
+    🧬 **Sosyal Öykü**: {social_str}  
+    💊 **Kullanılan İlaçlar**: {meds_str}  
+     
     Hastalık adını sakla ve sadece öğrenci sorduğunda cevapla.
     Soruları gerçek bir hasta gibi yanıtla.
-    Gereksiz bilgi verme, sorulmadıkça teşhisi söyleme.
+    Gereksiz bilgi verme, sorulmadıkça teşhisi söyleme. 
     """
     return prompt.strip()
 
@@ -139,90 +179,3 @@ def get_response(user_input, memory, llm_instance, system_prompt):
         return response, chain.memory
     except Exception as e:
         return f"Hata oluştu: {str(e)}", memory
-
-GEMINI_MODELS = [
-        # Güncel ve hızlı Flash modeller
-        "models/gemini-1.5-flash-latest",
-        "models/gemini-1.5-flash-002",
-        "models/gemini-2.5-flash",
-        "models/gemini-2.5-flash-lite",
-
-        # Daha güçlü Pro modeller (daha fazla kota tüketir)
-        "models/gemini-1.5-pro-latest",
-        "models/gemini-1.5-pro-002",
-        "models/gemini-2.5-pro",
-
-        # Flash-8B modelleri, küçük boyutlu ve uygun maliyetli
-        "models/gemini-1.5-flash-8b",
-        "models/gemini-1.5-flash-8b-001",
-        "models/gemini-1.5-flash-8b-latest",
-    ]
-
-if __name__ == "__main__":
-    # Hasta seç
-    folder_name = input("Hangi alanda hasta seçilsin? (örnek: pediatri): ").strip()
-    doctor_gender = input("cinsiyetiniz nedir?: (kadın/erkek)").strip()
-
-    try:
-        patient = load_random_patient(area=folder_name)  # ✅ DÜZELTİLDİ
-    except Exception as e:
-        print(f"Hasta yüklenemedi: {e}")
-        exit(1)
-
-    # Promptu oluştur
-    system_prompt = create_system_prompt(patient, doctor_gender)
-    print("=== Sistem Promptu ===")
-    print(system_prompt)
-
-    current_model_index = 0
-    current_model_name = GEMINI_MODELS[current_model_index]
-
-    llm = initialize_llm(current_model_name)
-    memory = create_memory()
-    conversation = create_conversation_chain(llm, system_prompt, memory)
-
-    current_turn = "doktor"
-    last_user_input = None
-
-    print("\nHasta simülasyonu başladı. 'exit' yazarak çıkabilirsiniz.\n")
-    while True:
-        print(f"\nŞu anki model: {current_model_name}")
-
-        if current_turn == "doktor":
-            user_input = input("👨‍⚕️ Doktor: ").strip()
-            if user_input.lower() in ["exit", "çık", "quit"]:
-                print("Simülasyon sonlandırılıyor...")
-                break
-            if not user_input:
-                print("Boş mesaj gönderilemez.")
-                continue
-
-            last_user_input = user_input  # kota dolarsa tekrar kullanmak için sakla
-            current_turn = "hasta"
-
-        if current_turn == "hasta":
-            while True:
-                try:
-                    response = conversation.predict(input=last_user_input)
-                    print(f"🧑‍🦰 Hasta: {response}")
-                    break  # başarılıysa döngüden çık
-                except ResourceExhausted:
-                    print(f"Kota doldu: {current_model_name}. Sıradaki modele geçiliyor.")
-                    current_model_index += 1
-                    if current_model_index >= len(GEMINI_MODELS):
-                        print("Tüm modeller doldu. 10 dakika bekleniyor...")
-                        time.sleep(600)
-                        current_model_index = 0
-
-                    current_model_name = GEMINI_MODELS[current_model_index]
-                    llm = initialize_llm(current_model_name)
-                    conversation = create_conversation_chain(llm, system_prompt, memory)
-                    print(f"Yeni modele geçildi: {current_model_name}")
-                    continue
-                except Exception as e:
-                    print(f"Beklenmeyen hata oluştu: {e}")
-                    break  # diğer hatalarda döngüden çık
-
-            current_turn = "doktor"
-
-
