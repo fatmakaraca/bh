@@ -1,0 +1,164 @@
+{
+  "disease_info": {
+    "id": "akut_apandisit",
+    "name": "Akut Apandisit",
+    "specialty": "gastroenteroloji",
+    "difficulty": "orta",
+    "description": "Vermiform appendiksin akut inflamasyonu, cerrahi acil durum",
+    "learning_objectives": [
+      "Apandisit tanı kriterleri",
+      "Alvarado skorunun kullanımı",
+      "Komplike vs basit apandisit",
+      "Cerrahi vs konservatif tedavi"
+    ],
+    "cases": [
+      {
+        "case_id": "GASTRO_APPENDICITIS_001",
+        "title": "Tipik Akut Apandisit",
+        "patient_profile": {
+          "name":"Can Yüksel",
+          "age": 22,
+          "gender": "erkek",
+          "chief_complaint": "12 saattir karın ağrısı",
+          "history": "Periumbilikal başlayan, sağ alt kadrana yayılan ağrı",
+          "symptoms": {
+            "abdominal_pain": "Sağ alt kadranda lokalize ağrı",
+            "pain_characteristics_summary": "12 saattir giderek artan, başlangıçta periumbilikal olup sağ alt kadrana göç eden, keskin ve sürekli, 8/10 şiddetinde karın ağrısı",
+            "nausea": "Belirgin bulantı",
+            "vomiting": "2 kez kusma",
+            "appetite_loss": "Komplet anoreksi",
+            "fever": "38.2°C ateş",
+            "constipation": "Hafif konstipasyon",
+            "urinary": "Dizüri yok",
+            "gynecologic": "Yok (erkek hasta)",
+            "respiratory": "Normal"
+          },
+          "precipitating_factors": "Yok",
+          "medical_history": "Sağlıklı",
+          "medications": "Yok",
+          "allergies": "Bilinen ilaç alerjisi yok",
+          "social_history": {
+            "occupation": "Üniversite öğrencisi",
+            "smoking": "Yok",
+            "alcohol": "Sosyal içici"
+          },
+          "vital_signs": {
+            "blood_pressure": "125/80",
+            "heart_rate": 95,
+            "respiratory_rate": 18,
+            "temperature": 38.2,
+            "weight": "70 kg",
+            "height": "175 cm"
+          },
+          "physical_exam": {
+            "general": "Hasta görünüm, hafif distres",
+            "abdomen": {
+              "inspection": "Hafif distansiyon",
+              "palpation": {
+                "mcburney_point": "Belirgin hassasiyet",
+                "rebound_tenderness": "Pozitif (Blumberg)",
+                "guarding": "Gönüllü koruma",
+                "rigidity": "Yok"
+              },
+              "percussion": "Sağ alt kadranda hassasiyet",
+              "auscultation": "Azalmış bağırsak sesleri"
+            },
+            "special_tests": {
+              "rovsing_sign": "Pozitif",
+              "psoas_sign": "Pozitif",
+              "obturator_sign": "Negatif"
+            },
+            "rectal_exam": "Sağ rektal duvarında hassasiyet"
+          },
+          "laboratory": {
+            "complete_blood_count": {
+              "wbc": "14,500/µL (lökositoz)",
+              "neutrophils": "85% (sol shift)",
+              "hemoglobin": "14.2 g/dL",
+              "platelets": "320,000/µL"
+            },
+            "inflammatory_markers": {
+              "crp": "25 mg/L (yüksek)"
+            },
+            "alvarado_score": {
+            "migration_pain": 1,
+            "anorexia": 1,
+            "nausea_vomiting": 1,
+            "ric_tenderness": 2,
+            "rebound_tenderness": 1,
+            "fever": 1,
+            "leukocytosis": 2,
+            "left_shift": 1,
+            "total": "10/10 (yüksek risk)"
+          },
+            "urinalysis": "Normal",
+            "pregnancy_test": "N/A (erkek hasta)"
+          },
+          "imaging": {
+            "abdominal_ultrasound": {
+              "appendix": "Kalınlaşmış duvar (>6mm)",
+              "free_fluid": "Minimal periapendiseal sıvı",
+              "lymph_nodes": "Mezoappendiseal lenf nodları"
+            },
+            "ct_scan": {
+              "appendix": "Kalın duvarlı, ödemli appendiks",
+              "fat_stranding": "Periapendiseal yağ planlarında artış",
+              "fluid": "Minimal serbest sıvı",
+              "complications": "Perforasyon bulgusu yok"
+            }
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "22 yaşında erkek hasta, tipik akut apandisit semptomları ile başvurdu.",
+          "classic_triad": "Karın ağrısı + kusma + ateş"
+        },
+        "correct_diagnosis": "Akut Apandisit (Basit, komplike olmamış)",
+        "differential_diagnosis": [
+          "Mezenterik lenfadenit",
+          "Gastroenterit",
+          "Böbrek taşı",
+          "Testis torsiyonu",
+          "Crohn hastalığı"
+        ],
+        "treatment_plan": [
+          "Preoperatif hazırlık:",
+          "- NPO (nothing per oral)",
+          "- IV sıvı resüsitasyonu",
+          "- Antibiyotik profilaksisi",
+          "- Analjezi (NSAİD + opiyat)",
+          "Cerrahi tedavi:",
+          "- Laparoskopik appendektomi (tercih)",
+          "- Açık appendektomi (gerekirse)",
+          "Postoperatif bakım:",
+          "- Antibiyotik devam (24-48 saat)",
+          "- Erken mobilizasyon",
+          "- Oral beslenme başlama"
+        ],
+        "learning_points": [
+          "Alvarado skorunun tanısal değeri",
+          "Atipik presentasyonlara dikkat",
+          "Laparoskopik vs açık cerrahi"
+        ],
+        "complications": [
+          "Perforasyon (%15-20)",
+          "Abse formasyonu",
+          "Peritonit",
+          "Bağırsak obstrüksiyonu",
+          "Yara enfeksiyonu"
+        ],
+        "prognosis": [
+          "Basit apandisit: Mükemmel prognoz",
+          "Komplike apandisit: İyi prognoz",
+          "Mortalite: <%1",
+          "Tam iyileşme: 1-2 hafta"
+        ],
+        "special_considerations": [
+          "Hamilelerde tanı zorluğu",
+          "Yaşlılarda atipik presentasyon",
+          "Çocuklarda perforasyon riski yüksek",
+          "Antibiyotik tedavisi alternatifi (seçilmiş vakalarda)"
+        ]
+      }
+    ]
+  }
+}

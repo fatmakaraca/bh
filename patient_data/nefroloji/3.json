@@ -1,0 +1,104 @@
+{
+  "disease_info": {
+    "id": "idrar_yolu_enfeksiyonu",
+    "name": "İdrar Yolu Enfeksiyonu (İYE)",
+    "specialty": "nefroloji",
+    "difficulty": "kolay",
+    "description": "İdrar yollarının bakteriyel enfeksiyonu",
+    "learning_objectives": [
+      "İYE tanı kriterleri",
+      "İdrar kültürü yorumlama",
+      "Sistit vs piyelonefrit ayrımı",
+      "Rekürren İYE nedenleri"
+    ],
+    "cases": [
+      {
+        "case_id": "NEFRO_UTI_001",
+        "title": "Akut Piyelonefrit",
+        "patient_profile": {
+          "name": "Yıldız Ender",
+          "age": 35,
+          "gender": "kadın",
+          "chief_complaint": "Yüksek ateş, titreme ve yan ağrısı",
+          "history": "2 gün önce dizüri, 1 gündür ateş ve sağ yan ağrısı",
+          "risk_factors": ["kadın cinsiyet", "cinsel aktivite", "gebelik değil"],
+          "symptoms": {
+            "dysuria": "Ağrılı işeme (yanma)",
+            "frequency": "Sık idrara çıkma",
+            "urgency": "İdrar aciliyeti",
+            "suprapubic_pain": "Suprapubik ağrı",
+            "hematuria": "Gözle görülür hematüri",
+            "fever": "Yüksek ateş (39.5°C)",
+            "chills": "Titreme",
+            "flank_pain": "Sağ yan ağrısı",
+            "nausea": "Bulantı",
+            "vomiting": "Kusma"
+          },
+          "medical_history": [
+            "6 ay önce sistit öyküsü",
+            "Kronik hastalık yok",
+            "İmmünosuppresyon yok"
+          ],
+          "vital_signs": {
+            "blood_pressure": "100/65",
+            "heart_rate": 120,
+            "respiratory_rate": 22,
+            "temperature": 39.5,
+            "oxygen_saturation": 97
+          },
+          "physical_exam": {
+            "general": "Ateşli, hasta görünümde",
+            "abdomen": "Suprapubik hassasiyet",
+            "costovertebral_angle": "Sağ CVAT pozitif",
+            "pelvic": "Normal external genitalia",
+            "skin": "Döküntü yok"
+          },
+          "laboratory": {
+            "urinalysis": {
+              "leukocyte_esterase": "Pozitif (+++)",
+              "nitrites": "Pozitif",
+              "wbc": ">50/hpf",
+              "rbc": "20-30/hpf",
+              "bacteria": "Çok sayıda",
+              "wbc_casts": "Pozitif (piyelonefrit)"
+            },
+            "urine_culture": "E. coli >100,000 CFU/mL",
+            "blood_culture": "E. coli pozitif",
+            "complete_blood_count": "Lökosit: 15,000/µL, left shift",
+            "creatinine": "1.0 mg/dL (normal)"
+          },
+          "imaging": {
+            "renal_ultrasound": "Normal böbrek boyutları, hidronefroz yok"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "35 yaşında kadın hasta, akut piyelonefrit bulguları ile başvurdu.",
+          "severity": "Komplike olmayan akut piyelonefrit"
+        },
+        "correct_diagnosis": "Akut Piyelonefrit (E. coli)",
+        "treatment_plan": [
+          "Hospitalizasyon",
+          "IV antibiotik (Ceftriaxone 1g/gün)",
+          "Ateş ve semptom takibi",
+          "72 saat sonra oral geçiş (Ciprofloxacin)",
+          "Toplam 14 gün antibiotik"
+        ],
+        "learning_points": [
+          "Sistit vs piyelonefrit ayrımı",
+          "Lökosit silindirinin önemi",
+          "IV vs oral antibiotik endikasyonu"
+        ],
+        "complications": [
+          "Urosepsis riski",
+          "Böbrek absesi",
+          "Kronik piyelonefrit"
+        ],
+        "follow_up": [
+          "72 saat içinde klinik yanıt",
+          "Tedavi sonrası idrar kültürü",
+          "Tekrarlayan İYE araştırması"
+        ]
+      }
+    ]
+  }
+}

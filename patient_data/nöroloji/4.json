@@ -1,0 +1,68 @@
+{
+  "disease_info": {
+    "id": "parkinson_hastalığı",
+    "name": "Parkinson Hastalığı",
+    "specialty": "nöroloji",
+    "difficulty": "zor",
+    "description": "Progresif nörodejeneratif hastalık, dopaminerjik nöron kaybı",
+    "learning_objectives": [
+      "Parkinson tanı kriterleri",
+      "Motor ve non-motor semptomlar",
+      "Levodopa tedavisi",
+      "Hastalık progresyonu değerlendirmesi"
+    ],
+    "cases": [
+      {
+        "case_id": "NEURO_PARK_001",
+        "title": "Erken Evre Parkinson Hastalığı",
+        "patient_profile": {
+          "name": "Nihat Polat",
+          "age": 58,
+          "gender": "erkek",
+          "chief_complaint": "Sağ elde titreme ve hareketlerde yavaşlama",
+          "history": "6 aydır sağ elde dinlenme titremesi, yazı yazmakta güçlük",
+          "family_history": "Negatif",
+          "symptoms_progression": "Yavaş ve progresif",
+          "vital_signs": {
+            "blood_pressure": "125/80",
+            "heart_rate": 70,
+            "respiratory_rate": 16,
+            "temperature": 36.4
+          },
+          "laboratory": {
+            "updrs_score": "Bölüm III: 22 puan"
+          },
+          "physical_exam": {
+            "consciousness": "Normal",
+            "speech": "Hafif hipofoni",
+            "motor": {
+              "tremor": "Sağ elde 4-6 Hz dinlenme titremesi",
+              "rigidity": "Sağ üst ekstremitede cogwheel rigidity",
+              "bradykinesia": "Sağ tarafta finger tapping yavaş",
+              "postural_instability": "Yok"
+            },
+            "gait": "Sağ kol salınımında azalma",
+            "facial_expression": "Hafif maskeli yüz"
+          },
+          "imaging": {
+            "dat_scan": "Sağ putamen dopamin transporter uptake azalmış",
+            "mri": "Normal",
+            "levodopa_challenge": "Belirgin iyileşme"
+          }
+        },
+        "correct_diagnosis": "idiopatik parkinson hastalığı (Hoehn-Yahr Evre 1)",
+        "treatment_plan": [
+          "Levodopa/Carbidopa 100/25mg 3x1",
+          "Fizik tedavi",
+          "Egzersiz programı",
+          "Düzenli takip"
+        ],
+        "learning_points": [
+          "Asimetrik başlangıç",
+          "Dinlenme titremesi özellikleri",
+          "Dopaminerjik yanıt testi"
+        ]
+      }
+    ]
+  }
+}

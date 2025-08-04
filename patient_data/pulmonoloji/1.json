@@ -1,0 +1,88 @@
+{
+  "disease_info": {
+    "id": "astım",
+    "name": "Astım",
+    "specialty": "pulmonoloji",
+    "difficulty": "kolay",
+    "description": "Hava yollarının kronik inflamatuar hastalığı",
+    "learning_objectives": [
+      "Astım tanı kriterleri",
+      "Solunum fonksiyon testleri yorumlama",
+      "İnhaler tekniği öğretimi",
+      "Atak yönetimi ve kontrol seviyesi"
+    ],
+    "cases": [
+      {
+        "case_id": "PULMO_ASTHMA_001",
+        "title": "Erişkin Başlangıçlı Astım",
+        "patient_profile": {
+          "name":"Esma Aktaş",
+          "age": 28,
+          "gender": "kadın",
+          "chief_complaint": "Nefes darlığı ve hırıltılı solunum",
+          "history": "6 aydır eforla artan nefes darlığı, geceleri hırıltı",
+          "trigger_factors": ["soğuk hava", "egzersiz", "stres", "polen"],
+          "symptoms": {
+            "dyspnea": "Eforla artan nefes darlığı",
+            "wheezing": "Hırıltılı solunum (özellikle ekspiryumda)",
+            "cough": "Kuru öksürük (geceleri artıyor)",
+            "chest_tightness": "Göğüste sıkışma hissi",
+            "nocturnal_symptoms": "Gece uyanma (haftada 2-3 kez)"
+          },
+          "medical_history": [
+            "Çocuklukta alerjik rinit",
+            "Ailesel astım öyküsü (anne)",
+            "Sigara kullanmıyor"
+          ],
+          "vital_signs": {
+            "blood_pressure": "118/75",
+            "heart_rate": 95,
+            "respiratory_rate": 22,
+            "temperature": 36.6,
+            "oxygen_saturation": 96,
+            "peak_flow": "320 L/dk (predicted: 450)"
+          },
+          "physical_exam": {
+            "general": "Hafif distresli",
+            "respiratory": "Bilateral ekspiratuar wheeze, uzamış ekspiryum",
+            "cardiovascular": "Taşikardik, murmur yok",
+            "skin": "Atopik dermatit bulguları",
+            "nasal": "Nazal polip, pale mukoza"
+          },
+          "laboratory": {
+            "blood_eosinophilia": "8% (hafif artış)",
+            "total_ige": "350 IU/mL (yüksek)",
+            "specific_ige": "Ev tozu akarı: pozitif, polen: pozitif",
+            "fev1": "2.1 L (%65 predicted)",
+            "fvc": "3.2 L (%78 predicted)",
+            "fev1_fvc_ratio": "65.6% (<70)",
+            "bronchodilator_response": "FEV1'de 18% artış (450 mL)",
+            "peak_flow_variability": ">20% (astım lehine)"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "28 yaşında kadın hasta, 6 aydır artan nefes darlığı ile başvurdu.",
+          "reversibility": "Bronkodilatör yanıtı pozitif (%18 artış)"
+        },
+        "correct_diagnosis": "Astım (Hafif Persistan )",
+        "treatment_plan": [
+          "ICS (İnhaler kortikosteroid): Beklometazon 200µg 2x1",
+          "Kurtarıcı bronkodilatör: Salbutamol İnhaler",
+          "Tetikleyici faktör kontrolü",
+          "İnhaler tekniği eğitimi",
+          "Peak flow monitörizasyonu"
+        ],
+        "learning_points": [
+          "Astım vs KOAH ayrımı (yaş, sigara, reversibilite)",
+          "Kontrol seviyesi değerlendirmesi",
+          "Basamaklı tedavi yaklaşımı"
+        ],
+        "follow_up": [
+          "4-6 hafta sonra kontrol",
+          "Semptom kontrolü değerlendirmesi",
+          "İnhaler tekniği gözden geçirme"
+        ]
+      }
+    ]
+  }
+}

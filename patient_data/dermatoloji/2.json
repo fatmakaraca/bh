@@ -1,0 +1,76 @@
+{
+  "disease_info": {
+    "id": "egzema",
+    "name": "Egzema (Atopik Dermatit)",
+    "specialty": "dermatoloji",
+    "difficulty": "orta",
+    "description": "Kronik, kaşıntılı, inflamatuar cilt hastalığı",
+    "learning_objectives": [
+      "Atopik dermatit tanı kriterleri",
+      "Tetikleyici faktörlerin belirlenmesi",
+      "Topikal steroid kullanımı",
+      "Cilt bakım rutinleri"
+    ],
+    "cases": [
+      {
+        "case_id": "DERMATO_EGZEMA_001",
+        "title": "Çocukluk Çağı Atopik Dermatit",
+        "patient_profile": {
+          "name":"İnci Yılmaz",
+          "age": 8,
+          "gender": "kız",
+          "chief_complaint": "Şiddetli kaşıntı ve cilt döküntüleri",
+          "history": "Doğumdan itibaren devam eden cilt problemi, kışın şiddetleniyor",
+          "risk_factors": ["ailesel atopi", "astım öyküsü", "çevresel alerjenler"],
+          "symptoms": {
+            "pruritus": "Şiddetli kaşıntı, geceleri uyku bozukluğu",
+            "xerosis": "Kuru, pul pul dökülen cilt",
+            "vesicles": "Akut dönemde kabarcıklar",
+            "weeping": "Lezyonlardan sızıntı",
+            "lichenification": "Kronik kaşıma sonucu kalınlaşma"
+          },
+          "medical_history": [
+            "Çocuklukta başlangıç (3 aylık)",
+            "Astım ve saman nezlesi öyküsü",
+            "Ailesel atopi (anne astım)"
+          ],
+          "vital_signs": {
+            "blood_pressure": "95/60",
+            "heart_rate": 100,
+            "temperature": 36.4,
+            "weight": "25 kg",
+            "height": "125 cm"
+          },
+          "physical_exam": {
+            "skin": "Yaygın kserotik görünüm",
+            "flexural_areas": "Antekübital ve popliteal fossada eritem",
+            "face": "Perioral ve periorbital dermatit",
+            "lichenification": "El bileklerinde kalınlaşma",
+            "secondary_infection": "İmpetinizasyon bulguları yok"
+          },
+          "laboratory": {
+            "serum_ige": "850 IU/mL (yüksek)",
+            "eosinophilia": "%8 (hafif artış)",
+            "specific_ige": "Ev tozu akarı: pozitif"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "8 yaşında kız hasta, çocukluktan beri devam eden atopik dermatit alevlenmesi.",
+          "triggering_factors": ["kış havası", "yün giysiler", "stres"]
+        },
+        "correct_diagnosis": "atopik dermatit (orta şiddetli)",
+        "treatment_plan": [
+          "Topikal kortikosteroid (Hydrocortisone %1)",
+          "Nemlendirici (günde 2-3 kez)",
+          "Antihistaminik (Cetirizine)",
+          "Tetikleyici faktör kontrolü"
+        ],
+        "learning_points": [
+          "Atopik march kavramı",
+          "Cilt bariyeri ve nemlendiricilerin önemi",
+          "Steroid fobisi ve eğitim"
+        ]
+      }
+    ]
+  }
+}

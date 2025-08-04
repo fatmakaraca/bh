@@ -1,0 +1,123 @@
+{
+  "disease_info": {
+    "id": "gut_artriti",
+    "name": "Gut Artriti",
+    "specialty": "romatoloji",
+    "difficulty": "orta",
+    "description": "Ürik asit kristallerinin eklemlerde birikimi ile oluşan artrit",
+    "learning_objectives": [
+      "Akut gut atağı tanısı",
+      "Sinovyal sıvı analizi",
+      "Kolşisin vs NSAİD kullanımı",
+      "Ürikosurik vs ürikolitik ajanlar"
+    ],
+    "cases": [
+      {
+        "case_id": "RHEUMA_GOUT_001",
+        "title": "Akut Gut Atağı",
+        "patient_profile": {
+          "name":"Bayram Güngör",
+          "age": 48,
+          "gender": "erkek",
+          "chief_complaint": "Sağ ayak başparmağında şiddetli ağrı",
+          "history": "Gece ani başlayan sağ 1. MTP ekleminde şiddetli ağrı",
+          "attack_characteristics": "Ani başlangıç, gece uyanması, şiddetli ağrı",
+          "symptoms": {
+            "severe_pain": "10/10 şiddetinde ağrı",
+            "monoarticular": "Tek eklem tutulumu (1. MTP)",
+            "swelling": "Eklemde belirgin şişlik",
+            "erythema": "Kızarıklık",
+            "warmth": "Sıcaklık artışı",
+            "tenderness": "Hafif dokunmaya bile dayanamama",
+            "podagra": "Klasik podagra tablosu"
+          },
+          "precipitating_factors": [
+            "Dün gece alkol tüketimi",
+            "Protein ağırlıklı yemek",
+            "Dehidratasyon"
+          ],
+          "risk_factors": [
+            "Erkek cinsiyet",
+            "Obezite (BMI: 31)",
+            "Hipertansiyon",
+            "Diüretik kullanımı",
+            "Aile öyküsü"
+          ],
+          "medical_history": [
+            "5 yıl hipertansiyon (HCTZ kullanımı)",
+            "2 yıl önce benzer atak",
+            "Böbrek taşı öyküsü"
+          ],
+          "medications": [
+            "Hydrochlorothiazide 25mg/gün",
+            "Losartan 50mg/gün"
+          ],
+          "vital_signs": {
+            "blood_pressure": "145/90",
+            "heart_rate": 95,
+            "respiratory_rate": 18,
+            "temperature": 37.8,
+            "weight": "92 kg",
+            "height": "178 cm",
+            "bmi": "31.0"
+          },
+          "physical_exam": {
+            "affected_joint": {
+              "inspection": "Sağ 1. MTP eklemde şişlik, kızarıklık",
+              "palpation": "Şiddetli hassasiyet, sıcak",
+              "range_of_motion": "Hareket kısıtlılığı (ağrı nedeniyle)",
+              "surrounding_skin": "Parlak, gergin"
+            },
+            "other_joints": "Normal",
+            "tophi": "Kulak kepçesinde küçük tofüs"
+          },
+          "laboratory": {
+            "serum_uric_acid": "9.5 mg/dL (yüksek, normal <7)",
+            "esr": "65 mm/saat (yüksek)",
+            "crp": "45 mg/L (yüksek)",
+            "wbc": "14,000/µL (lökositoz)",
+            "creatinine": "1.1 mg/dL (normal)",
+            "synovial_fluid_analysis": {
+              "appearance": "Opak, sarı",
+              "wbc": "25,000/µL (>2000)",
+              "crystals": "Negatif çift kırılımlı, iğne şekilli monosodyum ürat kristalleri",
+              "culture": "Negatif"
+            }
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "48 yaşında erkek hasta, akut gut atağı ile başvurdu.",
+          "classic_presentation": "Podagra - 1. MTP eklem tutulumu"
+        },
+        "correct_diagnosis": "Akut Gut Atağı (1. MTP eklem)",
+        "treatment_plan": [
+          "Akut atak tedavisi:",
+          "- Kolşisin 1mg, 1 saat sonra 0.5mg, sonra 0.5mg 2x1",
+          "- NSAİD alternatif: İndometasin 50mg 3x1",
+          "- Buz uygulaması",
+          "Atak sonrası:",
+          "- Ürik asit düşürücü (Allopurinol 100mg/gün)",
+          "- Yaşam tarzı değişiklikleri"
+        ],
+        "learning_points": [
+          "Sinovyal sıvıda ürat kristallerinin tanımlanması",
+          "Serum ürik asit normal olabilir (atak sırasında)",
+          "Kolşisin vs NSAİD seçimi"
+        ],
+        "prevention": [
+          "Alkol kısıtlaması",
+          "Protein kısıtlaması (purin)",
+          "Bol sıvı alımı",
+          "Kilo verme",
+          "Diüretik değişimi"
+        ],
+        "long_term_management": [
+          "Target ürik asit <6 mg/dL",
+          "Allopurinol vs febuksostat",
+          "Tofüs gelişimini önleme",
+          "Böbrek taşı profilaksisi"
+        ]
+      }
+    ]
+  }
+}

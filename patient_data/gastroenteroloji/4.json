@@ -1,0 +1,171 @@
+{
+  "disease_info": {
+    "id": "ulseratif_kolit",
+    "name": "Ülseratif Kolit",
+    "specialty": "gastroenteroloji",
+    "difficulty": "yüksek",
+    "description": "Kolonun mukoza ve submukozasını tutan kronik inflamatuar bağırsak hastalığı",
+    "learning_objectives": [
+      "UC tanı kriterleri",
+      "Hastalık aktivite değerlendirmesi",
+      "Medikal vs cerrahi tedavi kararı",
+      "Kolorektal kanser surveillance"
+    ],
+    "cases": [
+      {
+        "case_id": "GASTRO_UC_001",
+        "title": "Yeni Tanı Ülseratif Kolit",
+        "patient_profile": {
+          "name":"Hasan Ala",
+          "age": 28,
+          "gender": "erkek",
+          "chief_complaint": "2 aydır kanlı ishalli diyare",
+          "history": "Progresif artan kanlı diyare, karın ağrısı ve kilo kaybı",
+          "symptom_onset": "2 ay önce yavaş başlangıç",
+          "symptom_progression": "Giderek artan sıklık ve şiddet",
+          "symptoms": {
+            "bloody_diarrhea": "Günde 8-10 kez kanlı-müküslü diyare",
+            "abdominal_pain": "Sol alt kadran kramp tarzı ağrı",
+            "tenesmus": "İnkomplet defekasyon hissi",
+            "urgency": "Ani tuvalet ihtiyacı",
+            "weight_loss": "Son 2 ayda 8 kg kilo kaybı",
+            "fatigue": "Belirgin yorgunluk",
+            "fever": "Düşük dereceli ateş (37.5°C)"
+          },
+          "associated_symptoms": {
+            "joint_pain": "Dizlerde ağrı",
+            "skin_changes": "Bacaklarda erythema nodosum",
+            "eye_symptoms": "Yok"
+          },
+          "family_history": "Teyzede Crohn hastalığı",
+          "social_history": {
+            "smoking": "Hiç sigara içmemiş",
+            "stress": "İş stresi var",
+            "travel": "Son 6 ayda yurt dışı seyahat yok"
+          },
+          "review_of_systems": {
+            "constitutional": "Ateş, yorgunluk, kilo kaybı",
+            "gastrointestinal": "Kanlı diyare, karın ağrısı",
+            "musculoskeletal": "Artralji",
+            "dermatologic": "Erythema nodosum"
+          },
+          "vital_signs": {
+            "blood_pressure": "100/65 (hipotansiyon)",
+            "heart_rate": 110,
+            "respiratory_rate": 18,
+            "temperature": 37.6,
+            "weight": "62 kg (önceki ağırlık 70 kg)",
+            "height": "175 cm",
+            "bmi": "20.2"
+          },
+          "physical_exam": {
+            "general": "Hasta görünüm, hafif dehidrate",
+            "abdomen": {
+              "inspection": "Hafif distansiyon",
+              "palpation": "Sol alt kadranda hassasiyet",
+              "percussion": "Normal",
+              "auscultation": "Artmış bağırsak sesleri"
+            },
+            "rectal_exam": "Mukozal kanama, hassasiyet",
+            "extraintestinal": {
+              "skin": "Bilateral pretibial erythema nodosum",
+              "joints": "Diz eklemlerinde hassasiyet",
+              "eyes": "Normal"
+            }
+          },
+          "laboratory": {
+            "complete_blood_count": {
+              "hemoglobin": "9.5 g/dL (anemi)",
+              "hematocrit": "28%",
+              "wbc": "15,000/µL (lökositoz)",
+              "platelets": "450,000/µL (trombositoz)"
+            },
+            "inflammatory_markers": {
+              "esr": "65 mm/saat (yüksek)",
+              "crp": "45 mg/L (yüksek)"
+            },
+            "biochemistry": {
+              "albumin": "2.8 g/dL (düşük)",
+              "total_protein": "6.2 g/dL",
+              "electrolytes": "Normal"
+            },
+            "stool_studies": {
+              "fecal_calprotectin": "850 µg/g (çok yüksek)",
+              "culture": "Negatif",
+              "cdiff_toxin": "Negatif",
+              "parasites": "Negatif"
+            },
+            "serology": {
+              "panca": "Pozitif (atipik)",
+              "asca": "Negatif"
+            }
+          },
+          "imaging": {
+            "abdominal_ct": "Kolon duvarında kalınlaşma, sigmoid ve rektumda inflamasyon",
+            "colonoscopy": {
+              "findings": "Rektumdan sigmoid kolona kadar kontinü mukozal inflamasyon",
+              "ulcerations": "Yaygın yüzeyel ülserasyonlar",
+              "friability": "Mukozal frajilite ve spontan kanama",
+              "pseudopolyps": "Var",
+              "extent": "Sol kolon tutulumu"
+            },
+            "histopathology": {
+              "crypt_architecture": "Kripta distorsiyonu",
+              "inflammation": "Kronik aktif inflamasyon",
+              "crypt_abscesses": "Kripta apseler",
+              "goblet_cells": "Azalmış goblet hücreleri"
+            }
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "28 yaşında erkek hasta, kronik kanlı diyare ile başvurdu.",
+          "severity": "Orta şiddette UC (Mayo skorunun değerlendirilmesi)"
+        },
+        "correct_diagnosis": "ülseratif kolit (Orta şiddetli, sol kolon tutulumu)",
+        "differential_diagnosis": [
+          "Crohn hastalığı",
+          "Enfektif kolit",
+          "İskemik kolit",
+          "Radyasyon koliti",
+          "Drog ilişkili kolit"
+        ],
+        "treatment_plan": [
+          "Akut dönem tedavisi:",
+          "- Mesalazin 4g/gün PO + 1g/gün rektal",
+          "- Prednizolon 40mg/gün (4 hafta sonra taper)",
+          "- Demir replasmanı",
+          "- Sıvı elektrolit dengesi",
+          "Sürdürüm tedavisi:",
+          "- Mesalazin devam",
+          "- Azathioprine düşünülecek",
+          "Beslenme desteği:",
+          "- Yüksek protein, düşük lif diyet",
+          "- Vitamin B12, folat, vitamin D"
+        ],
+        "learning_points": [
+          "UC vs Crohn ayırıcı tanısı",
+          "Mayo skorlama sistemi",
+          "Step-up tedavi yaklaşımı"
+        ],
+        "complications": [
+          "Kolorektal kanser riski",
+          "Toksik megakolon",
+          "Perforasyon",
+          "Masif kanama",
+          "Extraintestinal manifestasyonlar"
+        ],
+        "monitoring": [
+          "Kolonoskopik surveillance (8-10 yıl sonra)",
+          "Osteoporoz screening",
+          "Hepatitis B reactivation riski",
+          "Düzenli hemogram ve karaciğer fonksiyonları"
+        ],
+        "prognosis": [
+          "Kronik remisyon-relaps seyiri",
+          "Kolorektal kanser riski artışı",
+          "Cerrahi gereksinimi %20-30"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "disease_info": {
+    "id": "pnömoni",
+    "name": "Pnömoni (Zatürre)",
+    "specialty": "pulmonoloji",
+    "difficulty": "orta",
+    "description": "Akciğer parankiminin akut enfeksiyonu",
+    "learning_objectives": [
+      "Toplum kökenli vs hastane kökenli pnömoni",
+      "CURB-65 skorlama sistemi",
+      "Empirik antibiotik seçimi",
+      "Hospitalizasyon kriterleri"
+    ],
+    "cases": [
+      {
+        "case_id": "PULMO_PNEUM_001",
+        "title": "Toplum Kökenli Pnömoni",
+        "patient_profile": {
+          "name":"Remzi Şeker",
+          "age": 45,
+          "gender": "erkek",
+          "chief_complaint": "Ateş, öksürük ve göğüs ağrısı",
+          "history": "3 gün önce başlayan ateş, öksürük, 1 gündür göğüs ağrısı",
+          "onset": "Akut başlangıç",
+          "symptoms": {
+            "fever": "Yüksek ateş (39.1°C)",
+            "cough": "Produktif öksürük (sarı-yeşil balgam)",
+            "dyspnea": "Eforla artan nefes darlığı",
+            "chest_pain": "Plöretik göğüs ağrısı (sağ alt lob)",
+            "chills": "Titreme",
+            "malaise": "Genel halsizlik",
+            "headache": "Baş ağrısı"
+          },
+          "medical_history": [
+            "Sağlıklı erişkin",
+            "Sigara kullanmıyor",
+            "Kronik hastalık yok"
+          ],
+          "vital_signs": {
+            "blood_pressure": "110/70",
+            "heart_rate": 105,
+            "respiratory_rate": 28,
+            "temperature": 39.1,
+            "oxygen_saturation": 91
+          },
+          "physical_exam": {
+            "general": "Ateşli, hafif distresli",
+            "respiratory": {
+              "inspection": "Sağ alt göğüste azalmış solunum hareketi",
+              "palpation": "Vokal fremitus artışı",
+              "percussion": "Matite",
+              "auscultation": "Bronşiyal solunum sesleri, raller"
+            },
+            "cardiovascular": "Taşikardik, murmur yok"
+          },
+          "laboratory": {
+            "complete_blood_count": "Lökosit: 16,000/µL, %85 nötrofil",
+            "crp": "180 mg/L (yüksek)",
+            "procalcitonin": "2.5 ng/mL (yüksek)",
+            "blood_culture": "S. pneumoniae pozitif",
+            "sputum_culture": "S. pneumoniae >10^5 CFU/mL",
+            "arterial_blood_gas": "pH: 7.42, pO2: 68 mmHg",
+            "severity_scores": {
+              "curb65": "2 puan (confusion: 0, urea: 0, RR: 1, BP: 0, age: 0)",
+              "psi_score": "III sınıf (orta risk)"
+            }
+          },
+          "imaging": {
+            "chest_xray": "Sağ alt lob konsolidasyonu",
+            "chest_ct": "Segmental pnömoni, plevral efüzyon yok"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "45 yaşında erkek hasta, toplum kökenli pnömoni ile başvurdu.",
+          "pathogen": "Streptococcus pneumoniae"
+        },
+        "correct_diagnosis": "Pnömoni (S. pneumoniae - Toplum Kökenli)",
+        "treatment_plan": [
+          "Hospitalizasyon (CURB-65: 2 puan)",
+          "IV antibiotik: Ceftriaxone 1g/gün + Azithromycin",
+          "Oksijen desteği (SpO2 >92% için)",
+          "Sıvı replasmanı",
+          "Ateş kontrolü",
+          "48-72 saat sonra oral geçiş"
+        ],
+        "learning_points": [
+          "CURB-65 skorlama sistemi",
+          "S. pneumoniae en sık etken",
+          "Empirik vs yönlendirilmiş tedavi"
+        ],
+        "complications": [
+          "Sepsis gelişimi",
+          "Plevral efüzyon",
+          "ARDS riski"
+        ],
+        "prevention": [
+          "Pnömokok aşısı",
+          "İnfluenza aşısı",
+          "Sigara bırakma"
+        ]
+      }
+    ]
+  }
+}

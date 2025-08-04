@@ -1,0 +1,90 @@
+{
+  "disease_info": {
+    "id": "streptokokal_farenjit",
+    "name": "Streptokokal Farenjit (Beta Mikrobu Enfeksiyonu)",
+    "specialty": "enfeksiyon_hastalıkları",
+    "difficulty": "kolay",
+    "description": "Grup A beta-hemolitik streptokokların neden olduğu akut farenjit",
+    "learning_objectives": [
+      "Centor kriterleri kullanımı",
+      "Hızlı strep testi yorumlama",
+      "Antibiotik seçimi ve süresi",
+      "Komplikasyon risklerinin değerlendirilmesi"
+    ],
+    "cases": [
+      {
+        "case_id": "INFECT_STREP_001",
+        "title": "Klasik Strep Farenjit",
+        "patient_profile": {
+          "name":"Emre Kök",
+          "age": 12,
+          "gender": "erkek",
+          "chief_complaint": "Ani başlangıçlı şiddetli boğaz ağrısı",
+          "history": "Dün akşam ani başlayan boğaz ağrısı, yutkunma güçlüğü",
+          "contact_history": "Sınıfta strep farenjit vakaları",
+          "symptoms": {
+            "sore_throat": "Ani başlangıçlı şiddetli boğaz ağrısı",
+            "dysphagia": "Yutkunma güçlüğü",
+            "fever": "Ateş (38.8°C)",
+            "headache": "Frontal baş ağrısı",
+            "nausea": "Hafif bulantı",
+            "vomiting": "1 kez kusma",
+            "absence_of_cough": "Öksürük YOK",
+            "absence_of_rhinorrhea": "Burun akıntısı YOK"
+          },
+          "centor_criteria": {
+            "tonsillar_exudate": "Var (+1)",
+            "tender_anterior_nodes": "Var (+1)",
+            "fever_history": "Var (+1)",
+            "absence_of_cough": "Var (+1)",
+            "total_score": "4/4 (yüksek risk)"
+          },
+          "vital_signs": {
+            "blood_pressure": "100/65",
+            "heart_rate": 110,
+            "respiratory_rate": 18,
+            "temperature": 38.8,
+            "oxygen_saturation": 99
+          },
+          "physical_exam": {
+            "throat": "Tonsiller hipertrofik, eksüdatlı",
+            "lymph_nodes": "Bilateral tender anterior servikal LAP",
+            "rash": "Döküntü yok",
+            "respiratory": "Normal solunum sesleri",
+            "abdomen": "Normal"
+          },
+          "laboratory": {
+            "rapid_strep_test": "Pozitif",
+            "throat_culture": "Beta-hemolitik streptokok üremesi"
+          }
+        },
+        "clinical_scenario": {
+          "presentation": "12 yaşında erkek hasta, klasik strep farenjit bulguları ile başvurdu.",
+          "differential_diagnosis": [
+            "Grup A strep farenjit",
+            "Viral farenjit",
+            "EBV mononükleoz",
+            "Difteria"
+          ]
+        },
+        "correct_diagnosis": "Farenjit (Grup A Beta-Hemolitik Streptokok Farenjit)",
+        "treatment_plan": [
+          "Amoksisilin 500mg 3x1 (10 gün)",
+          "Parasetamol (ateş ve ağrı için)",
+          "Tuzlu su gargara",
+          "İstirahat ve sıvı alımı"
+        ],
+        "learning_points": [
+          "Centor kriterleri kullanımı",
+          "Viral vs bakteriyel farenjit ayrımı",
+          "Antibiotik direnci ve compliance"
+        ],
+        "complications": [
+          "Akut romatizmal ateş",
+          "Post-streptokokal glomerulonefrit",
+          "Peritonsillar abse"
+        ]
+      }
+    ]
+  }
+}
