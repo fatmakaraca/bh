@@ -258,12 +258,13 @@ def get_patient_info(session_id: str):
         raise HTTPException(status_code=404, detail="Hasta verisi bulunamadı.")
 
     patient_data = json.loads(patient_json)
-    name = patient_data.get("name", "Bilinmiyor")
+    name = patient_data.get("patient_profile", {}).get("name", "Bilinmiyor")
     correct_diagnosis = patient_data.get("correct_diagnosis", "Tanı bilgisi yok")
 
     return {
         "patient_name": name,
         "correct_diagnosis": correct_diagnosis
     }
+
 
 
