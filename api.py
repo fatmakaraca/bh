@@ -11,7 +11,6 @@ from google.api_core.exceptions import ResourceExhausted
 from fastapi import Query
 from fastapi.middleware.cors import CORSMiddleware
 
-
 from patient_agent import (
     load_random_patient,
     create_system_prompt,
@@ -21,26 +20,21 @@ from patient_agent import (
     GEMINI_MODELS
 )
 
-# .env yükle
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-# FastAPI örneği
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Güvenliğin önemli olduğu durumlarda bu kısmı sınırlandır
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Redis bağlantısı
-REDIS_URL = os.getenv("REDIS_URL")
-r = redis.from_url(REDIS_URL, decode_responses=True)
+r = redis.Redis(host="localhost", port=6379, db=0, decode_responses=True)
 
-# MODELLER
 class MessageInput(BaseModel):
     session_id: str
     message: str
@@ -54,7 +48,6 @@ class DiagnosisInput(BaseModel):
     session_id: str
     diagnosis: str
 
-# 1️⃣ Alan seçme ve hasta atama
 @app.post("/select_area")
 def select_area(area: str, doctor_gender: str = Query(..., regex="^(kadın|erkek)$")):
     try:
@@ -87,8 +80,6 @@ def select_area(area: str, doctor_gender: str = Query(..., regex="^(kadın|erkek
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-# 2️⃣ Doktor mesaj atar, hasta (Gemini) cevap döner
 @app.post("/chat")
 def chat(input: MessageInput):
     session_id = input.session_id.strip()
@@ -152,8 +143,6 @@ def chat(input: MessageInput):
         "response": response
     }
 
-
-# 3️⃣ Reset endpoint
 @app.post("/reset")
 def reset_session(session_id: str):
     memory_key = f"session:{session_id}"
@@ -163,7 +152,6 @@ def reset_session(session_id: str):
     return {"message": f"{session_id} oturumu sıfırlandı."}
 
 
-# 4️⃣ Sağlık kontrolü
 @app.get("/status")
 def health_check():
     return {"status": "OK"}
@@ -216,13 +204,37 @@ def submit_diagnosis(data: DiagnosisInput):
     if not session_id or not diagnosis:
         raise HTTPException(status_code=400, detail="session_id ve diagnosis gereklidir.")
 
+    patient_key = f"session:{session_id}:patient"
+    patient_json = r.get(patient_key)
+
+    if not patient_json:
+        raise HTTPException(status_code=404, detail="Hasta verisi bulunamadı.")
+
+    patient_data = json.loads(patient_json)
+    correct_diagnosis = patient_data.get("correct_diagnosis", "")
+
     key = f"session:{session_id}:diagnosis"
     r.set(key, diagnosis)
 
+    correct_diagnosis_main = re.split(r"\s*\(", correct_diagnosis)[0].strip().lower()
+    diagnosis_main = diagnosis.strip().lower()
+
+    is_correct = diagnosis_main == correct_diagnosis_main
+
+    if correct_diagnosis:
+        if is_correct:
+            result = f"Tebrikler, doğru teşhis! Hastalık: {correct_diagnosis}"
+        else:
+            result = f"Yanlış teşhis. Doğru cevap: {correct_diagnosis}"
+    else:
+        result = "Doğru teşhis bilgisi JSON içinde tanımlı değil."
+
     return {
-        "message": "Teşhis başarıyla kaydedildi.",
+        "message": result,
         "session_id": session_id,
-        "diagnosis": diagnosis
+        "your_diagnosis": diagnosis,
+        "correct_diagnosis": correct_diagnosis,
+        "is_correct": is_correct
     }
 
 
