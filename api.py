@@ -249,5 +249,21 @@ def submit_diagnosis(data: DiagnosisInput):
         "is_correct": is_correct
     }
 
+@app.get("/patient_info")
+def get_patient_info(session_id: str):
+    patient_key = f"session:{session_id}:patient"
+    patient_json = r.get(patient_key)
+
+    if not patient_json:
+        raise HTTPException(status_code=404, detail="Hasta verisi bulunamadı.")
+
+    patient_data = json.loads(patient_json)
+    name = patient_data.get("name", "Bilinmiyor")
+    correct_diagnosis = patient_data.get("correct_diagnosis", "Tanı bilgisi yok")
+
+    return {
+        "patient_name": name,
+        "correct_diagnosis": correct_diagnosis
+    }
 
 
