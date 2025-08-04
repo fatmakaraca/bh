@@ -72,22 +72,6 @@ def create_system_prompt(patient_data, doctor_gender):
     # Güncel hikaye (history)
     patient_story = profile.get("history", "Belirtilmemiş")
 
-    # Vital bulgular
-    vitals = profile.get("vital_signs", {})
-    vitals_str = ", ".join([f"{k}: {v}" for k, v in vitals.items()]) if vitals else "Yok"
-
-    # Fizik muayene
-    physical = profile.get("physical_exam", {})
-    physical_str = ", ".join([f"{k}: {v}" for k, v in physical.items()]) if physical else "Yok"
-
-    # Laboratuvar
-    lab = profile.get("laboratory", {})
-    lab_str = ", ".join([f"{k}: {v}" for k, v in lab.items()]) if lab else "Yok"
-
-    # Görüntüleme verisi varsa
-    images = profile.get("imaging", {})
-    image_str = ", ".join([f"{k}: {v}" for k, v in images.items()]) if images else "Yok"
-
     # İlaçlar
     meds = profile.get("medications", [])
     meds_str = ", ".join(meds) if meds else "Yok"
@@ -197,3 +181,4 @@ GEMINI_MODELS = [
         "models/gemini-1.5-flash-8b-001",
         "models/gemini-1.5-flash-8b-latest",
     ]
+
