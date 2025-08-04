@@ -30,7 +30,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Güvenliğin önemli olduğu durumlarda bu kısmı sınırlandır
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -216,13 +216,38 @@ def submit_diagnosis(data: DiagnosisInput):
     if not session_id or not diagnosis:
         raise HTTPException(status_code=400, detail="session_id ve diagnosis gereklidir.")
 
+    patient_key = f"session:{session_id}:patient"
+    patient_json = r.get(patient_key)
+
+    if not patient_json:
+        raise HTTPException(status_code=404, detail="Hasta verisi bulunamadı.")
+
+    patient_data = json.loads(patient_json)
+    correct_diagnosis = patient_data.get("correct_diagnosis", "")
+
     key = f"session:{session_id}:diagnosis"
     r.set(key, diagnosis)
 
+    correct_diagnosis_main = re.split(r"\s*\(", correct_diagnosis)[0].strip().lower()
+    diagnosis_main = diagnosis.strip().lower()
+
+    is_correct = diagnosis_main == correct_diagnosis_main
+
+    if correct_diagnosis:
+        if is_correct:
+            result = f"Tebrikler, doğru teşhis! Hastalık: {correct_diagnosis}"
+        else:
+            result = f"Yanlış teşhis. Doğru cevap: {correct_diagnosis}"
+    else:
+        result = "Doğru teşhis bilgisi JSON içinde tanımlı değil."
+
     return {
-        "message": "Teşhis başarıyla kaydedildi.",
+        "message": result,
         "session_id": session_id,
-        "diagnosis": diagnosis
+        "your_diagnosis": diagnosis,
+        "correct_diagnosis": correct_diagnosis,
+        "is_correct": is_correct
     }
+
 
 
