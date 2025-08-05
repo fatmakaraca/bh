@@ -7,4 +7,6 @@ langchain
 langchain-google-genai
 google-generativeai
 google-api-core
+chromadb
+
 
