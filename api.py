@@ -256,7 +256,7 @@ def get_patient_info(session_id: str):
     patient_data = json.loads(patient_json)
     name = patient_data.get("patient_profile", {}).get("name", "Bilinmiyor")
     age = patient_data.get("patient_profile", {}).get("age", "Bilinmiyor")
-    age_unit = patient_data.get("patient_profile", {}).get("age_unit", "Bilinmiyor")
+    age_unit = patient_data.get("patient_profile", {}).get("age_unit", "yaş")
     age_str = f"{age} {age_unit}".strip()
     gender = patient_data.get("patient_profile", {}).get("gender", "Bilinmiyor")
 
@@ -268,6 +268,7 @@ def get_patient_info(session_id: str):
         "patient_gender": gender,
         "correct_diagnosis": correct_diagnosis
     }
+
 
 
 
