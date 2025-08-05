@@ -99,15 +99,15 @@ def create_system_prompt(patient_data, doctor_gender):
 
     Aşağıdaki bilgiler sana aittir:
 
-    👤 **Ad**: {name}  
-    📅 **Yaş**: {age_str}  
-    🚻 **Cinsiyet**: {gender}  
-    🤒 **Semptomlar**: {symptoms} 
+    Ad: {name}  
+    Yaş: {age_str}  
+    Cinsiyet: {gender}  
+    Semptomlar: {symptoms} 
     Güncel Hikaye: {patient_story} 
-    📖 **Tıbbi Geçmiş**: {history}  
-    👨‍👩‍👧 **Aile Öyküsü**: {family_history}  
-    🧬 **Sosyal Öykü**: {social_str}  
-    💊 **Kullanılan İlaçlar**: {meds_str}  
+    Tıbbi Geçmiş: {history}  
+    Aile Öyküsü: {family_history}  
+    Sosyal Öykü: {social_str}  
+    Kullanılan İlaçlar: {meds_str}  
      
     Hastalık adını sakla ve sadece öğrenci sorduğunda cevapla.
     Soruları gerçek bir hasta gibi yanıtla.
@@ -181,4 +181,5 @@ GEMINI_MODELS = [
         "models/gemini-1.5-flash-8b-001",
         "models/gemini-1.5-flash-8b-latest",
     ]
+
 
