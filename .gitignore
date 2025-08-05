@@ -13,9 +13,9 @@ venv.bak/
 # Environment variables
 .env
 
-# Database files
-rag/db/
-*.sqlite3
+# Database files (commented out for demo - juries need the data)
+# rag/db/
+# *.sqlite3
 
 # Medical books data (copyright protection)
 books_data/
