@@ -1,6 +1,45 @@
-# Ortak gereksiz dosyalar
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 
-# Ortam değişkenleri dosyası
+# Environment variables
 .env
+
+# Database files
+rag/db/
+*.sqlite3
+
+# Medical books data (copyright protection)
+books_data/
+*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Model files
+*.gguf
+*.bin
+models/
+
+# Test files (removed from production)
+test_*.py
+*_test.py
