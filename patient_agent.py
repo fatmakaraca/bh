@@ -165,21 +165,17 @@ def get_response(user_input, memory, llm_instance, system_prompt):
         return f"Hata oluştu: {str(e)}", memory
 
 GEMINI_MODELS = [
-        # Güncel ve hızlı Flash modeller
         "models/gemini-1.5-flash-latest",
         "models/gemini-1.5-flash-002",
         "models/gemini-2.5-flash",
         "models/gemini-2.5-flash-lite",
-
-        # Daha güçlü Pro modeller (daha fazla kota tüketir)
         "models/gemini-1.5-pro-latest",
         "models/gemini-1.5-pro-002",
         "models/gemini-2.5-pro",
-
-        # Flash-8B modelleri, küçük boyutlu ve uygun maliyetli
         "models/gemini-1.5-flash-8b",
         "models/gemini-1.5-flash-8b-001",
         "models/gemini-1.5-flash-8b-latest",
     ]
+
 
 
