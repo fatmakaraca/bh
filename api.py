@@ -270,3 +270,8 @@ def get_patient_info(session_id: str):
         "patient_gender": gender,
         "correct_diagnosis": correct_diagnosis
     }
+
+@app.on_event("startup")
+async def startup_event():
+    """Uygulama başlarken database'in hazır olduğundan emin ol"""
+    ensure_database_ready()
