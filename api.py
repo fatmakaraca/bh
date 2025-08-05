@@ -54,7 +54,6 @@ class DiagnosisInput(BaseModel):
     session_id: str
     diagnosis: str
 
-# 1️⃣ Alan seçme ve hasta atama
 @app.post("/select_area")
 def select_area(area: str, doctor_gender: str = Query(..., regex="^(kadın|erkek)$")):
     try:
@@ -88,7 +87,6 @@ def select_area(area: str, doctor_gender: str = Query(..., regex="^(kadın|erkek
         raise HTTPException(status_code=500, detail=str(e))
 
 
-# 2️⃣ Doktor mesaj atar, hasta (Gemini) cevap döner
 @app.post("/chat")
 def chat(input: MessageInput):
     session_id = input.session_id.strip()
@@ -153,7 +151,6 @@ def chat(input: MessageInput):
     }
 
 
-# 3️⃣ Reset endpoint
 @app.post("/reset")
 def reset_session(session_id: str):
     memory_key = f"session:{session_id}"
@@ -163,7 +160,6 @@ def reset_session(session_id: str):
     return {"message": f"{session_id} oturumu sıfırlandı."}
 
 
-# 4️⃣ Sağlık kontrolü
 @app.get("/status")
 def health_check():
     return {"status": "OK"}
@@ -259,12 +255,20 @@ def get_patient_info(session_id: str):
 
     patient_data = json.loads(patient_json)
     name = patient_data.get("patient_profile", {}).get("name", "Bilinmiyor")
+    age = patient_data.get("patient_profile", {}).get("age", "Bilinmiyor")
+    age_unit = patient_data.get("patient_profile", {}).get("age_unit", "Bilinmiyor")
+    age_str = f"{age} {age_unit}".strip()
+    gender = patient_data.get("patient_profile", {}).get("gender", "Bilinmiyor")
+
     correct_diagnosis = patient_data.get("correct_diagnosis", "Tanı bilgisi yok")
 
     return {
         "patient_name": name,
+        "patient_age": age_str,
+        "patient_gender": gender,
         "correct_diagnosis": correct_diagnosis
     }
+
 
 
 
