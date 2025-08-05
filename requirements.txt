@@ -1,7 +1,10 @@
-fastapi==0.104.1
-uvicorn==0.24.0
-chromadb==0.4.15
-python-dotenv==1.0.0
-llama-cpp-python==0.2.11
-pydantic==1.10.13
+fastapi
+uvicorn
+pydantic
+python-dotenv
+redis
+langchain
+langchain-google-genai
+google-generativeai
+google-api-core
 
