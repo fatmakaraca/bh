@@ -2,15 +2,14 @@
 import os
 import json
 import shutil
+import requests
 from dotenv import load_dotenv
 import chromadb
 from typing import Dict, List, Optional
 
 load_dotenv()
-model_path = os.getenv("MODEL_PATH")
 
 # Lazy loading için global değişkenler
-llm = None
 chroma_client = None
 collection = None
 
@@ -33,17 +32,6 @@ def ensure_database_ready():
         print(f"⚠️ Database kontrol hatası: {e}")
         return False
 
-def initialize_llm():
-    """LLM'i lazy loading ile başlat"""
-    global llm
-    if llm is None:
-        try:
-            from llama_cpp import Llama
-            llm = Llama(model_path=model_path, n_ctx=2048, n_threads=6, verbose=False)
-        except Exception as e:
-            print(f"LLM initialization failed: {e}")
-            llm = "error"
-    return llm
 
 def initialize_chroma():
     """ChromaDB'yi lazy loading ile başlat - GÜNCELLENEN VERSİYON"""
@@ -76,7 +64,6 @@ def reset_globals():
     global chroma_client, collection, llm
     chroma_client = None
     collection = None
-    llm = None
     print("🔄 Global değişkenler sıfırlandı")
 
 def reset_database():
@@ -242,35 +229,34 @@ def query_db(query):
         return results["documents"][0][0]
     return ""
 
-def ask_llm(question):
-    """LLM'e soru sor"""
+def ask_gemini_api(prompt: str, max_tokens=500, temperature=0.7) -> str:
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        return "Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin."
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "prompt": prompt,
+        "max_tokens": max_tokens,
+        "temperature": temperature,
+        # Buraya Gemini API dokümantasyonuna göre gerekli parametreler eklenmeli
+    }
     try:
-        model = initialize_llm()
-        if model == "error":
-            return "LLM is not available. Please check your model configuration."
-        
-        context = query_db(question)
-        if context:
-            prompt = f"Context:\n{context}\n\nQuestion: {question}\nAnswer:"
-        else:
-            prompt = f"Question: {question}\nAnswer:"
-        
-        response = model(prompt, max_tokens=300, stop=["Q:", "User:"])
-        return response["choices"][0]["text"].strip()
+        response = requests.post("https://gemini.api.endpoint/v1/generate", headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        return data.get("choices", [{}])[0].get("text", "").strip()
     except Exception as e:
-        return f"Error from LLM: {str(e)}"
+        return f"Gemini API hatası: {e}"
 
 def answer_question(question: str, specialty: str = None) -> Dict:
-    """Ana fonksiyon - specialty-aware cevap ver"""
     try:
-        # Specialty context'ini temizle
         if "[ENDOCRINOLOGY]" in question:
             specialty = "endocrinology"
             question = question.replace("[ENDOCRINOLOGY]", "").strip()
-        
-        # Database'den specialty'ye özel sonuçlar al
         db_results = query_db_by_specialty(question, specialty, n_results=3)
-        
         if not db_results.get("documents") or not db_results["documents"][0]:
             return {
                 "answer": "Üzgünüm, bu konuda bilgi bulamadım.",
@@ -280,23 +266,8 @@ def answer_question(question: str, specialty: str = None) -> Dict:
                     "results_found": 0
                 }
             }
-        
-        # En iyi sonucu al
         context = db_results["documents"][0][0]
         metadata = db_results["metadatas"][0][0] if db_results.get("metadatas") else {}
-        
-        # LLM'e sor
-        llm_instance = initialize_llm()
-        if llm_instance == "error":
-            return {
-                "answer": "LLM servisi şu anda kullanılamıyor.",
-                "source_metadata": metadata,
-                "query_info": {
-                    "specialty_filter": specialty,
-                    "results_found": len(db_results["documents"][0])
-                }
-            }
-        
         prompt = f"""
 Context: {context}
 
@@ -304,17 +275,10 @@ Question: {question}
 
 Answer based on the medical context provided:
 """
-        
-        response = llm_instance(prompt, max_tokens=500, temperature=0.7)
-        llm_answer = response["choices"][0]["text"].strip()
-        
-        # Source bilgilerini hazırla
+        llm_answer = ask_gemini_api(prompt, max_tokens=500, temperature=0.7)
         book_title = metadata.get("book_title", "Unknown")
         page_number = metadata.get("page_number", "Unknown")
-        
-        # Source bilgisini answer'ın başına ekle
         answer_with_source = f"This information is from {book_title}'s {page_number}th page:\n\n{llm_answer}"
-        
         return {
             "answer": answer_with_source,
             "source_metadata": {
@@ -327,7 +291,6 @@ Answer based on the medical context provided:
                 "results_found": len(db_results["documents"][0])
             }
         }
-        
     except Exception as e:
         print(f"❌ answer_question hatası: {e}")
         return {
@@ -335,4 +298,5 @@ Answer based on the medical context provided:
             "source_metadata": None,
             "query_info": None
         }
+
 
