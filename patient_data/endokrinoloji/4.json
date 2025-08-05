@@ -16,7 +16,7 @@
         "case_id": "ENDO_T2DM_001",
         "title": "Yeni Tanı Tip 2 Diyabet",
         "patient_profile": {
-          "name:":"Selinay Aksu",
+          "name":"Selinay Aksu",
           "age": 48,
           "gender": "kadın",
           "chief_complaint": "Son 3 ayda çok susama ve sık idrara çıkma",
@@ -174,3 +174,4 @@
     ]
   }
 }
+
