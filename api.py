@@ -11,7 +11,7 @@ from google.api_core.exceptions import ResourceExhausted
 from fastapi import Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from rag.rag import answer_question, get_database_info, ensure_database_ready, translate_text
+from rag.rag import answer_question, get_database_info, ensure_database_ready
 from enum import Enum
 
 model_index_key_for_query = "query:model_index"
@@ -373,21 +373,22 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                 }
 
             except ResourceExhausted:
+                # Kota dolduğunda indeksi artır
                 current_index += 1
                 if current_index > max_index:
+                    # Tüm modeller dolduysa biraz bekle ve başa dön
                     print("Tüm modellerin kotası doldu. 10 dakika bekleniyor...")
                     time.sleep(600)
-                    current_index = 0  # başa dön
-
+                    current_index = 0
+                # Redis'te güncelle
                 r.set(model_index_key_for_query, current_index)
-                continue  # bir sonraki modeli denemek için while'ı sürdür
-    
-                except Exception as e:
-                    raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
-    
+
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+
 
 
 
