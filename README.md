@@ -33,7 +33,7 @@ Platformlar arası (Android/iOS) geliştirme
 - Dart: Uygulama mantığı ve UI kodlaması için kullanılan programlama dili
 - Emulator/ Gerçek Cihaz Testleri
 Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama test edildi. Gerçek cihaz (Samsung A71) ve emülatör üzerinde karşılaştırmalı denemeler yapılarak uyumluluk sağlandı.
-- API isteklerinin emülatör ortamında test edilmesi için gerekli bağlantı ayarları yapılandırıldı.
+- HTTP: API isteklerinin emülatör ortamında test edilmesi için gerekli bağlantı ayarları yapılandırıldı.
 - Shared Preferences: Kullanıcının verilerini cihazda kalıcı olarak saklamak için  kullanıldı
 
 ## Sistem Mimarisi
@@ -125,6 +125,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
