@@ -97,7 +97,10 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 - Gerçek ve geniş kapsamlı veri setleri toplanarak bilgi tabanı güçlendirilecek.
 - Desteklenen hastalık ve uzmanlık alanları artırılacak, böylece kullanıcılar için kapsam genişleyecek.
 - Modelin performans ve doğruluğu iyileştirilerek, klinik uygulamalara daha uygun sonuçlar elde edilecek.
-- Alanında uzman doktorlarla iş birliği yapılarak sistemin doğruluğu, güvenilirliği ve pratik uygulamaya uygunluğu artırılacak.  
+- Alanında uzman doktorlarla iş birliği yapılarak sistemin doğruluğu, güvenilirliği ve pratik uygulamaya uygunluğu artırılacak.
+- Kullanıcıların sorulara verdikleri doğru/yanlış cevaplara göre puanlama sistemi geliştirilecek, böylece kullanıcıların bilgi düzeyi analiz edilebilecek.
+- Çok dilli destek eklenecek; Türkçe ve İngilizce arasında dinamik geçiş sağlanarak, özellikle tıp İngilizcesi pratiği yapmak isteyen kullanıcılar için fayda sunulacak.
+- Sesli komut ve konuşma tanıma (Speech-to-Text) entegrasyonu eklenerek kullanıcıların sesle sohbet edebilmesi sağlanabilir.
 
 ## 🎥 Uygulama Videosu 
 
@@ -121,6 +124,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
