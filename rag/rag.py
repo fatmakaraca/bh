@@ -239,7 +239,7 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest"
     
     try:
         # Modeli başlat (örneğin gemini-pro kullanılıyor)
-        model = genai.GenerativeModel(model_name=model_name")
+        model = genai.GenerativeModel(model_name=model_name)
 
         # Prompt gönder
         response = model.generate_content(
