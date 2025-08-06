@@ -23,4 +23,14 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 
 📢 Bu endpoint üzerinden mobil uygulama, yapay zekâ destekli yanıtları almak için bağlantı kurmaktadır.
 
-## Ekip İletişim Bilgileri
+## 📫 Ekip İletişim Bilgileri
+
+- 👤 **Fatma Karaca** 
+  📧 fatmakaraca0626@gmail.com
+
+- 👤 **Nehir Selinay Günenç **   
+  📧 nehir@example.com
+
+- 👤 **Şeyma Doğan** – [Uzmanlık Rolü]  
+  📧 uye@example.com
+
