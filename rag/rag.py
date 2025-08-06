@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 import chromadb
 from typing import Dict, List, Optional
 import google.generativeai as genai
+from google.api_core.exceptions import ResourceExhausted
+
 
 load_dotenv()
 
