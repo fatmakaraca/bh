@@ -230,15 +230,8 @@ def query_db(query):
         return results["documents"][0][0]
     return ""
 
-def translate_text(text: str, target_language: str = "en", model_name: str = "models/gemini-1.5-pro-latest") -> str:
-    """
-    Gemini ile çeviri yapan fonksiyon.
-    """
-    prompt = f"Lütfen şu metni {target_language.upper()} diline çevir:\n\n{text}"
-    return ask_gemini_api(prompt, model_name=model_name)
 
-
-def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest", max_tokens=500, temperature=0.7) -> str:
+def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-flash-002", max_tokens=500, temperature=0.7) -> str:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin.")
@@ -262,7 +255,7 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest"
     except Exception as e:
         return f"Gemini SDK Hatası: {str(e)}"
 
-def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-pro-latest") -> Dict:
+def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-flash-002") -> Dict:
     try:
         if "[ENDOCRINOLOGY]" in question:
             specialty = "endocrinology"
