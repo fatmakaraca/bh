@@ -379,22 +379,23 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                 }
 
             except Exception as e:
-            if "429" in str(e) or "quota" in str(e).lower():
-                current_index += 1
-                if current_index > max_index:
-                    print("Tüm modellerin kotası doldu. 10 dakika bekleniyor...")
-                    time.sleep(600)
-                    current_index = 0  # başa dön
-
-                r.set(model_index_key_for_query, current_index)
-                continue  # bir sonraki modeli denemek için while'ı sürdür
-
-            else:
-                raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
-
+                if "429" in str(e) or "quota" in str(e).lower():
+                    current_index += 1
+                    if current_index > max_index:
+                        print("Tüm modellerin kotası doldu. 10 dakika bekleniyor...")
+                        time.sleep(600)
+                        current_index = 0  # başa dön
+    
+                    r.set(model_index_key_for_query, current_index)
+                    continue  # bir sonraki modeli denemek için while'ı sürdür
+    
+                else:
+                    raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+    
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+
 
 
 
