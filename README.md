@@ -38,32 +38,31 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 
 ## Sistem Mimarisi
 
-
-
-                        🧑‍⚕️ Kullanıcı
+<pre>
+                          🧑‍⚕️ Kullanıcı
                              │
                              ▼
                  📱 Mobil Uygulama (Flutter)
                              │
-                [Teşhis süreci, hasta ile etkileşim]
+            [Teşhis süreci, hasta ile etkileşim]
                              │
                              ▼
-               🌐 REST API Sunucusu (FastAPI + Redis)
+         🌐 REST API Sunucusu (FastAPI + Redis)
                              │
-                ┌────────────┴────────────┐
-                │                         │
-                ▼                         ▼
-   🤖 Gemini (Hasta Simülasyonu)     📚 RAG Sistemi
-                                      (Gemini + ChromaDB)
-                                        │
-                        [Embedding + En alakalı içerik]
-                                        ▼
-                           🔁 Gemini üzerinden yanıt
+                 ┌──────────┴──────────┐
+                 │                     │
+                 ▼                     ▼
+     🤖 Gemini (Hasta Simülasyonu)   📚 RAG Sistemi
+                                 (Gemini + ChromaDB)
+                                         │
+                   [Embedding + En alakalı içerik]
+                                         ▼
+                        🔁 Gemini üzerinden yanıt
                              │
                              ▼
                  📲 Yanıt Mobil Uygulamaya döner
 
-
+</pre>
 
 
 ## 👥 Ekip ve İş Bölümü
@@ -125,6 +124,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
