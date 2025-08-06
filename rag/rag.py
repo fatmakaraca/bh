@@ -230,7 +230,7 @@ def query_db(query):
         return results["documents"][0][0]
     return ""
 
-def ask_gemini_api(prompt: str, max_tokens=500, temperature=0.7) -> str:
+def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest", max_tokens=500, temperature=0.7) -> str:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         return "Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin."
@@ -239,7 +239,7 @@ def ask_gemini_api(prompt: str, max_tokens=500, temperature=0.7) -> str:
     
     try:
         # Modeli başlat (örneğin gemini-pro kullanılıyor)
-        model = genai.GenerativeModel(model_name="models/gemini-1.5-pro-latest")
+        model = genai.GenerativeModel(model_name=model_name")
 
         # Prompt gönder
         response = model.generate_content(
