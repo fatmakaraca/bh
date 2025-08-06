@@ -25,12 +25,13 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 
 ## 📫 Ekip İletişim Bilgileri
 
-- 👤 **Fatma Karaca** 
+- 👤 **Fatma Karaca ** 
   📧 fatmakaraca0626@gmail.com
 
 - 👤 **Nehir Selinay Günenç **   
   📧 nehir@example.com
 
-- 👤 **Şeyma Doğan** – [Uzmanlık Rolü]  
+- 👤 **Şeyma Doğan **  
   📧 uye@example.com
+
 
