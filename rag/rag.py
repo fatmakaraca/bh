@@ -253,7 +253,7 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-flash-002",
         return response.text.strip()
 
     except Exception as e:
-        return f"Gemini SDK Hatası: {str(e)}"
+        raise e
 
 def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-flash-002") -> Dict:
     try:
@@ -279,7 +279,12 @@ Question: {question}
 
 Answer based on the medical context provided:
 """
-        llm_answer = ask_gemini_api(prompt, model_name=model, max_tokens=500, temperature=0.7)
+        # Burada ask_gemini_api çağrısını try-except ile sarmalıyoruz:
+        try:
+            llm_answer = ask_gemini_api(prompt, model_name=model, max_tokens=500, temperature=0.7)
+        except Exception as e:
+            # Exception'u yukarı fırlatıyoruz, FastAPI veya çağıran yer yakalayacak
+            raise e
         book_title = metadata.get("book_title", "Unknown")
         page_number = metadata.get("page_number", "Unknown")
         answer_with_source = f"This information is from {book_title}'s {page_number}th page:\n\n{llm_answer}"
