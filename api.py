@@ -342,15 +342,10 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                 # Kullanılacak model adı
                 model_name = GEMINI_MODELS[current_index]
 
-                # Soru İngilizceye çevrilir
-                translated_question = translate_text(request.question, target_language="en")
-
-                rag_result = answer_question(translated_question, specialty=mapped_specialty, model=model_name)
-
+                rag_result = answer_question(request.question, specialty=mapped_specialty)
                 # Başarılıysa sonucu dön
                 if isinstance(rag_result, dict):
-                    answer_en = rag_result.get("answer", str(rag_result))
-                    translated_answer = translate_text(answer_en, target_language="tr")
+                    answer_text = rag_result.get("answer", str(rag_result))
                     source_info = {}
                     if rag_result.get("source_metadata"):
                         metadata = rag_result["source_metadata"]
@@ -360,8 +355,7 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                             "specialty": metadata.get("specialty", "Unknown")
                         }
                 else:
-                    answer_en = str(rag_result)
-                    translated_answer = translate_text(answer_en, target_language="tr")
+                    answer_text = str(rag_result)
                     source_info = {}
 
                 # Kullanılan modeli ve index'i redis'e yaz
@@ -371,30 +365,30 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                     "question": request.question,
                     "specialty": request.specialty,
                     "mapped_specialty": mapped_specialty,
-                    "answer": translated_answer,
+                    "answer": answer_text,
                     "status": "success",
                     "source_details": source_info,
                     "model": model_name,
                     "query_info": rag_result.get("query_info") if isinstance(rag_result, dict) else None
                 }
 
-            except Exception as e:
-                if "429" in str(e) or "quota" in str(e).lower():
-                    current_index += 1
-                    if current_index > max_index:
-                        print("Tüm modellerin kotası doldu. 10 dakika bekleniyor...")
-                        #time.sleep(600)
-                        current_index = 0  # başa dön
+            except ResourceExhausted:
+                current_index += 1
+                if current_index > max_index:
+                    print("Tüm modellerin kotası doldu. 10 dakika bekleniyor...")
+                    time.sleep(600)
+                    current_index = 0  # başa dön
+
+                r.set(model_index_key_for_query, current_index)
+                continue  # bir sonraki modeli denemek için while'ı sürdür
     
-                    r.set(model_index_key_for_query, current_index)
-                    continue  # bir sonraki modeli denemek için while'ı sürdür
-    
-                else:
+                except Exception as e:
                     raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
     
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+
 
 
 
