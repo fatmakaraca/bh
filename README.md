@@ -38,7 +38,11 @@ PATSİM, tıp eğitiminde pratik ve teoriyi birleştirerek öğrencilerin klinik
 
 ## Uygulamada Bulunan Özellikler
 
-## Gelecek Geliştirmeler
+## 🚀 Gelecek Geliştirmeler
+- RAG sistemimize daha fazla ve çeşitli tıbbi kaynaklar eklenecek.
+- Gerçek ve geniş kapsamlı veri setleri toplanarak bilgi tabanı güçlendirilecek.
+- Desteklenen hastalık ve uzmanlık alanları artırılacak, böylece kullanıcılar için kapsam genişleyecek.
+- Modelin performans ve doğruluğu iyileştirilerek, klinik uygulamalara daha uygun sonuçlar elde edilecek.
 
 ## 🎥 Uygulama Videosu 
 
@@ -62,6 +66,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
