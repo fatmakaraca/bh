@@ -1,6 +1,20 @@
 # 🩺 PATSİM – Yapay Zekâ Destekli Hasta Simülasyon Uygulaması
 
 ## Proje Amacı
+PATSİM,  tıp öğrencilerinin teorik bilgilerini hasta simülasyonlarıyla pratiğe dökmelerine olanak sağlayan yenilikçi bir eğitim uygulamasıdır. Proje, öğrencilerin mesleki becerilerini geliştirmeye ve klinik deneyim kazanmaya yönelik önemli katkılar sunar.
+Bu uygulama sayesinde;
+
+- Öğrenciler, gerçekçi senaryolar üzerinden hasta değerlendirme ve teşhis süreçlerini uygulayarak özgüven kazanır,
+
+- Teorik bilgilerini aktif öğrenme yoluyla pekiştirir ve kalıcı hale getirir,
+
+- Hasta ile etkili iletişim kurma becerilerini geliştirerek mesleki iletişim yetkinliklerini artırır,
+
+- Hatalarını güvenli bir ortamda deneyimleyerek gerçek hasta risklerini azaltır,
+
+- Eğitim sürecinde esneklik sağlayarak, zaman ve mekân kısıtlaması olmadan öğrenmelerine destek olur.
+
+PATSİM, tıp eğitiminde pratik ve teoriyi birleştirerek öğrencilerin klinik hazırlıklarını güçlendiren, öğrenme deneyimini zenginleştiren ve sağlık hizmetlerinin kalitesini yükselten bir platformdur.
 
 ## Projede Kullanılan Teknolojiler
 
@@ -34,6 +48,9 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
+
+
 
 
 
