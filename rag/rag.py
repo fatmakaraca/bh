@@ -289,8 +289,18 @@ Answer based on the medical context provided:
         try:
             llm_answer = ask_gemini_api(prompt, model_name=model, max_tokens=500, temperature=0.7)
         except Exception as e:
-            # Exception'u yukarı fırlatıyoruz, FastAPI veya çağıran yer yakalayacak
+        print(f"❌ Inner exception in ask_gemini_api: {type(e).__name__} - {e}")
+        # Eğer bu zaten ResourceExhausted ise yeniden fırlat
+        if isinstance(e, ResourceExhausted):
             raise e
+        # Eğer hata mesajı içinde 429 veya quota geçiyorsa yeniden sınıflandır
+        elif "429" in str(e) or "quota" in str(e).lower():
+            print("🚨 answer_question: ResourceExhausted olarak sınıflandırılıyor.")
+            raise ResourceExhausted(str(e))
+        # Diğer hataları direkt fırlat
+        raise e
+
+        
         book_title = metadata.get("book_title", "Unknown")
         page_number = metadata.get("page_number", "Unknown")
         answer_with_source = f"This information is from {book_title}'s {page_number}th page:\n\n{llm_answer}"
@@ -307,7 +317,7 @@ Answer based on the medical context provided:
             }
         }
     except Exception as e:
-        print(f"❌ answer_question hatası: {e}")
+        print(f"❌ answer_question dış hata: {type(e).__name__} - {e}")
         return {
             "answer": f"Bir hata oluştu: {str(e)}",
             "source_metadata": None,
