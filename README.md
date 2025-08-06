@@ -92,9 +92,6 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 
 6. **Bakılan Hastalar** bölümünden daha önce baktığınız hastaları inceleyebilirsiniz.
 
-
-## Uygulamada Bulunan Özellikler
-
 ## 🚀 Gelecek Geliştirmeler
 - RAG sistemimize daha fazla ve çeşitli tıbbi kaynaklar eklenecek.
 - Gerçek ve geniş kapsamlı veri setleri toplanarak bilgi tabanı güçlendirilecek.
@@ -124,6 +121,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
