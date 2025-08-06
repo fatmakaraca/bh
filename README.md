@@ -32,7 +32,9 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
   📧 nehir@example.com
 
 - 👤 **Şeyma Doğan**  
-  📧 uye@example.com
+  📧 seymadogan166@gmail.com
+  
+
 
 
 
