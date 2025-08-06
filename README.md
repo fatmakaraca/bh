@@ -25,7 +25,7 @@ PATSİM, tıp eğitiminde pratik ve teoriyi birleştirerek öğrencilerin klinik
   - Retrieval (Bilgi Getirme):
 Kullanıcının sorduğu soruya benzer içerikler, önceden vektörleştirilmiş bir doküman veritabanından aranır. Bu projede vektör arama motoru olarak ChromaDB kullanılmıştır. Dokümanlar embedding’lere dönüştürülürken Mistral modeliyle uyumlu bir gömleme modeli tercih edilmiştir.
   - Generation (Cevap Üretimi):
-Elde edilen ilgili doküman parçaları, LLM’e (bu projede Hugging Face üzerinden entegre edilen Mistral-7B-Instruct) birlikte bağlam olarak verilir. Model, bu ek bilgiyle desteklenmiş daha isabetli cevaplar üretir.
+Elde edilen ilgili doküman parçaları, LLM’e birlikte bağlam olarak verilir. Model, bu ek bilgiyle desteklenmiş daha isabetli cevaplar üretir.
 - ChromaDB: Doküman vektörlerini depolamak ve hızlı benzerlik sorguları yapmak için kullanılan vektör veritabanı.
 - Sentence Transformers / HuggingFace Transformers:Embedding ve model entegrasyonları için kullanıldı.
 - Flutter: Ana mobil uygulama çatısı
@@ -124,6 +124,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
