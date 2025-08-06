@@ -391,8 +391,19 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
 
 
 
-
-
-
+@app.get("/redis/keys")
+def list_redis_keys():
+    try:
+        keys = r.keys("*")
+        result = {}
+        for key in keys:
+            try:
+                val = r.get(key)
+                result[key] = val
+            except Exception as e:
+                result[key] = f"Hata: {str(e)}"
+        return {"redis_keys": result}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
