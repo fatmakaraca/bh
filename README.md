@@ -99,7 +99,7 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 
 ## 🎥 Uygulama Videosu 
 
-📺 YouTube videosu: [https://www.youtube.com/watch?v=video_id](https://youtube.com/shorts/9P0P-y8oLEA)
+📺 YouTube videosu: [https://www.youtube.com/watch?v=video_id](https://youtube.com/shorts/9P0P-y8oLEA )
 
 ## Canlı Demo
 
@@ -119,6 +119,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
