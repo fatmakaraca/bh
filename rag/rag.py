@@ -243,16 +243,29 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-flash-002",
         # Modeli başlat (örneğin gemini-pro kullanılıyor)
         model = genai.GenerativeModel(model_name=model_name)
 
-        # Prompt gönder
-        response = model.generate_content(
-            prompt,
-            generation_config={
-                "temperature": temperature,
-                "max_output_tokens": max_tokens
-            }
-        )
+        try:
+            response = model.generate_content(
+                prompt,
+                generation_config={
+                    "temperature": temperature,
+                    "max_output_tokens": max_tokens
+                }
+            )
+            try:
+                response_text = response.text.strip()
+            except Exception as e:
+                print(f"❌ response.text içinde hata: {type(e).__name__} - {e}")
+                if "429" in str(e) or "quota" in str(e).lower():
+                    raise ResourceExhausted(str(e))
+                raise e
+        
+            return response_text
+        
+        except Exception as e:
+            if "429" in str(e) or "quota" in str(e).lower():
+                raise ResourceExhausted(str(e))
+            raise
 
-        return response.text.strip()
 
     except Exception as e:
         # Eğer hata mesajında "429" veya kota aşımı ile ilgili bir şey varsa ResourceExhausted fırlat
