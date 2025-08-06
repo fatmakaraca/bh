@@ -305,7 +305,6 @@ Answer based on the medical context provided:
         }
     except Exception as e:
         print(f"❌ answer_question hatası: {e}")
-        return {
         raise
 
 
