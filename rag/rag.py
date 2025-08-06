@@ -318,8 +318,8 @@ Answer based on the medical context provided:
         }
 
     except ResourceExhausted as e:
-    print(f"🟥 answer_question ResourceExhausted fırlatıyor: {e}")
-    raise
+        print(f"🟥 answer_question ResourceExhausted fırlatıyor: {e}")
+        raise
     
     except Exception as e:
         print(f"❌ answer_question dış hata: {type(e).__name__} - {e}")
