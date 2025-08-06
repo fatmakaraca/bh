@@ -253,7 +253,11 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-flash-002",
         return response.text.strip()
 
     except Exception as e:
-        raise e
+        # Eğer hata mesajında "429" veya kota aşımı ile ilgili bir şey varsa ResourceExhausted fırlat
+        if "429" in str(e) or "quota" in str(e).lower():
+            raise ResourceExhausted(str(e))
+        # Diğer hatalar için genel exception
+        raise
 
 def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-flash-002") -> Dict:
     try:
