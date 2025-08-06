@@ -14,6 +14,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from rag.rag import answer_question, get_database_info, ensure_database_ready
 from enum import Enum
 
+model_index_key_for_query = "query:model_index"
+
 from patient_agent import (
     load_random_patient,
     create_system_prompt,
@@ -328,31 +330,65 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                 "database_info": db_info
             }
 
-        rag_result = answer_question(request.question, specialty=mapped_specialty)
 
-        if isinstance(rag_result, dict):
-            answer_text = rag_result.get("answer", str(rag_result))
-            source_info = {}
-            if rag_result.get("source_metadata"):
-                metadata = rag_result["source_metadata"]
-                source_info = {
-                    "book_title": metadata.get("book_title", "Unknown"),
-                    "page_number": metadata.get("page_number", "Unknown"),
-                    "specialty": metadata.get("specialty", "Unknown")
+        # Redis'ten mevcut model index'i al (yoksa 0)
+        current_index = int(r.get(model_index_key_for_query) or 0)
+
+        # Model listesi (GEMINI_MODELS global değişken olmalı)
+        max_index = len(GEMINI_MODELS) - 1
+
+        while True:
+            try:
+                # Kullanılacak model adı
+                model_name = GEMINI_MODELS[current_index]
+
+                # answer_question fonksiyonuna model ismi geçirebilirsin, 
+                # eğer fonksiyon destekliyorsa
+                rag_result = answer_question(request.question, specialty=mapped_specialty, model=model_name)
+
+                # Başarılıysa sonucu dön
+                if isinstance(rag_result, dict):
+                    answer_text = rag_result.get("answer", str(rag_result))
+                    source_info = {}
+                    if rag_result.get("source_metadata"):
+                        metadata = rag_result["source_metadata"]
+                        source_info = {
+                            "book_title": metadata.get("book_title", "Unknown"),
+                            "page_number": metadata.get("page_number", "Unknown"),
+                            "specialty": metadata.get("specialty", "Unknown")
+                        }
+                else:
+                    answer_text = str(rag_result)
+                    source_info = {}
+
+                # Kullanılan modeli ve index'i redis'e yaz
+                r.set(model_index_key_for_query, current_index)
+
+                return {
+                    "question": request.question,
+                    "specialty": request.specialty,
+                    "mapped_specialty": mapped_specialty,
+                    "answer": answer_text,
+                    "status": "success",
+                    "source_details": source_info,
+                    "model": model_name,
+                    "query_info": rag_result.get("query_info") if isinstance(rag_result, dict) else None
                 }
-        else:
-            answer_text = str(rag_result)
-            source_info = {}
 
-        return {
-            "question": request.question,
-            "specialty": request.specialty,
-            "mapped_specialty": mapped_specialty,
-            "answer": answer_text,
-            "status": "success",
-            "source_details": source_info,
-            "query_info": rag_result.get("query_info") if isinstance(rag_result, dict) else None
-        }
+            except ResourceExhausted:
+                # Kota dolduğunda indeksi artır
+                current_index += 1
+                if current_index > max_index:
+                    # Tüm modeller dolduysa biraz bekle ve başa dön
+                    print("Tüm modellerin kotası doldu. 10 dakika bekleniyor...")
+                    time.sleep(600)
+                    current_index = 0
+                # Redis'te güncelle
+                r.set(model_index_key_for_query, current_index)
+
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+
