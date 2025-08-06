@@ -36,16 +36,22 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 - API isteklerinin emülatör ortamında test edilmesi için gerekli bağlantı ayarları yapılandırıldı.
 - Shared Preferences: Kullanıcının verilerini cihazda kalıcı olarak saklamak için  kullanıldı
 
-
-
-
-
-
-
 ## Sistem Mimarisi
 
-## Ekip ve İş Bölümü
-
+## 👥 Ekip ve İş Bölümü
+- **Şeyma**:
+  -  Veri Toplama ve Temizleme
+  -  Metin İşleme ve Hazırlık
+  - Embedding ve Vektör Veritabanı
+- **Fatma**:
+    - API Geliştirme (FastAPI)
+    - Sunucuya Deploy Etme (Render)
+    - Patient Agent Tasarımı ve Geliştirmesi (hasta rolünü üstlenen yapay zeka akışı)
+- **Nehir**:
+    - Mobil Uygulama Geliştirme (Flutter)
+    - Arayüz Tasarımı
+    - API ile Entegrasyon
+      
 ## Kullanım Akışı
 1. Uygulamaya giriş yapın ve kullanıcı hesabınızla oturum açın.
 
@@ -67,6 +73,7 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 - Gerçek ve geniş kapsamlı veri setleri toplanarak bilgi tabanı güçlendirilecek.
 - Desteklenen hastalık ve uzmanlık alanları artırılacak, böylece kullanıcılar için kapsam genişleyecek.
 - Modelin performans ve doğruluğu iyileştirilerek, klinik uygulamalara daha uygun sonuçlar elde edilecek.
+- Alanında uzman doktorlarla iş birliği yapılarak sistemin doğruluğu, güvenilirliği ve pratik uygulamaya uygunluğu artırılacak.  
 
 ## 🎥 Uygulama Videosu 
 
@@ -90,6 +97,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
