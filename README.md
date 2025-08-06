@@ -17,6 +17,30 @@ Bu uygulama sayesinde;
 PATSİM, tıp eğitiminde pratik ve teoriyi birleştirerek öğrencilerin klinik hazırlıklarını güçlendiren, öğrenme deneyimini zenginleştiren ve sağlık hizmetlerinin kalitesini yükselten bir platformdur.
 
 ## Projede Kullanılan Teknolojiler
+- Gemini (Google Generative AI): Tıbbi sorulara doğal dilde yanıtlar üretmek için kullanılmıştır. Yapay zekâya kullanıcı soruları gönderilerek bilgiye dayalı akıllı yanıtlar elde edilmiştir.
+- LangChain: Prompt yönetimi, veri bağlantıları ve bellek yönetimi gibi işlemleri kolaylaştırmak için tercih edilmiştir.
+- FastAPI: rojemizde RESTful API yapısını oluşturmak, güvenilir ve hızlı bir backend sağlamak amacıyla tercih edilmiştir. Asenkron destekli yapısıyla yapay zekâ entegrasyonlarında performans avantajı sağlar.
+- Redis: API yanıtlarını önbelleğe almak, oturum yönetimi sağlamak ve kullanıcı deneyimini hızlandırmak amacıyla kullanılmıştır. Gerçek zamanlı işlemler için oldukça etkilidir.
+- RAG (Retrieval-Augmented Generation): Bu projede, LLM tabanlı hasta simülasyon sisteminin bilgi tabanını genişletmek amacıyla RAG (Retrieval-Augmented Generation) mimarisi kullanılmıştır. RAG, klasik dil modellerine kıyasla daha güncel ve doğru cevaplar üretmesini sağlar. Sistem iki temel adımdan oluşur:
+  - Retrieval (Bilgi Getirme):
+Kullanıcının sorduğu soruya benzer içerikler, önceden vektörleştirilmiş bir doküman veritabanından aranır. Bu projede vektör arama motoru olarak ChromaDB kullanılmıştır. Dokümanlar embedding’lere dönüştürülürken Mistral modeliyle uyumlu bir gömleme modeli tercih edilmiştir.
+  - Generation (Cevap Üretimi):
+Elde edilen ilgili doküman parçaları, LLM’e (bu projede Hugging Face üzerinden entegre edilen Mistral-7B-Instruct) birlikte bağlam olarak verilir. Model, bu ek bilgiyle desteklenmiş daha isabetli cevaplar üretir.
+- ChromaDB: Doküman vektörlerini depolamak ve hızlı benzerlik sorguları yapmak için kullanılan vektör veritabanı.
+- Sentence Transformers / HuggingFace Transformers:Embedding ve model entegrasyonları için kullanıldı.
+- Flutter: Ana mobil uygulama çatısı
+Platformlar arası (Android/iOS) geliştirme
+- Dart: Uygulama mantığı ve UI kodlaması için kullanılan programlama dili
+- Emulator/ Gerçek Cihaz Testleri
+Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama test edildi. Gerçek cihaz (Samsung A71) ve emülatör üzerinde karşılaştırmalı denemeler yapılarak uyumluluk sağlandı.
+- API isteklerinin emülatör ortamında test edilmesi için gerekli bağlantı ayarları yapılandırıldı.
+- Shared Preferences: Kullanıcının verilerini cihazda kalıcı olarak saklamak için  kullanıldı
+
+
+
+
+
+
 
 ## Sistem Mimarisi
 
@@ -66,6 +90,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
