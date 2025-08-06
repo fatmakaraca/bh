@@ -342,7 +342,7 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                 # Kullanılacak model adı
                 model_name = GEMINI_MODELS[current_index]
 
-                rag_result = answer_question(request.question, specialty=mapped_specialty)
+                rag_result = answer_question(request.question, specialty=mapped_specialty, model=model_name)
                 # Başarılıysa sonucu dön
                 if isinstance(rag_result, dict):
                     answer_text = rag_result.get("answer", str(rag_result))
@@ -388,6 +388,7 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+
 
 
 
