@@ -255,7 +255,7 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest"
     except Exception as e:
         return f"Gemini SDK Hatası: {str(e)}"
 
-def answer_question(question: str, specialty: str = None) -> Dict:
+def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-pro-latest") -> Dict:
     try:
         if "[ENDOCRINOLOGY]" in question:
             specialty = "endocrinology"
@@ -279,7 +279,7 @@ Question: {question}
 
 Answer based on the medical context provided:
 """
-        llm_answer = ask_gemini_api(prompt, max_tokens=500, temperature=0.7)
+        llm_answer = ask_gemini_api(prompt, model_name=model, max_tokens=500, temperature=0.7)
         book_title = metadata.get("book_title", "Unknown")
         page_number = metadata.get("page_number", "Unknown")
         answer_with_source = f"This information is from {book_title}'s {page_number}th page:\n\n{llm_answer}"
