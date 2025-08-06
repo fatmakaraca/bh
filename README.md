@@ -23,12 +23,26 @@ PATSİM, tıp eğitiminde pratik ve teoriyi birleştirerek öğrencilerin klinik
 ## Ekip ve İş Bölümü
 
 ## Kullanım Akışı
+1. Uygulamaya giriş yapın ve kullanıcı hesabınızla oturum açın.
+
+2. Simülasyon modülünden ilgili uzmanlık alanını seçin (ör. Kardiyoloji, Nöroloji, Dermatoloji).
+
+3. Karşınıza gelen hastayla sohbet ederek hastalığını teşhis etmeye çalışın. Bu süreçte sağ üst köşede bulunan **vital bulgular**, **fizik muayene**, **laboratuvar sonuçları** ve **görüntüleme sonuçları** kısımlarından hasta hakkında bilgiler edinebilirsiniz.
+
+4. Hastanın isim, cinsiyet, yaş, semptomları, aile öyküsü, sosyal geçmişi, tıbbi öyküsü kullandığı ilaçlar gibi verileri sorarak öğrenebilirsiniz.
+
+5. Teşhis etmek istediğinizde **teşhis et** butonuna teşhisinizi girin, bilip bilememe durumunuz size bildirilecektir. Ayrıca teşhis yaptıktan sonra **kaynağa bak** butonu aktifleşir ve konuyla alakalı bilgi edinebilirsiniz.
+
+6. **Bakılan Hastalar** bölümünden daha önce baktığınız hastaları inceleyebilirsiniz.
+
 
 ## Uygulamada Bulunan Özellikler
 
 ## Gelecek Geliştirmeler
 
-## Uygulama Videosu 
+## 🎥 Uygulama Videosu 
+
+📺 YouTube videosu: [https://www.youtube.com/watch?v=video_id](https://www.youtube.com/watch?v=video_id)
 
 ## Canlı Demo
 
@@ -48,6 +62,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
