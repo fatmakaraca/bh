@@ -241,7 +241,7 @@ def translate_text(text: str, target_language: str = "en", model_name: str = "mo
 def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest", max_tokens=500, temperature=0.7) -> str:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        return "Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin."
+        raise RuntimeError("Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin.")
 
     genai.configure(api_key=api_key)
     
@@ -261,7 +261,7 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest"
         return response.text.strip()
 
     except Exception as e:
-        return f"Gemini SDK Hatası: {str(e)}"
+        raise RuntimeError(f"Gemini SDK Hatası: {str(e)}")
 
 def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-pro-latest") -> Dict:
     try:
