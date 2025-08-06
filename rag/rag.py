@@ -239,7 +239,7 @@ def ask_gemini_api(prompt: str, max_tokens=500, temperature=0.7) -> str:
     
     try:
         # Modeli başlat (örneğin gemini-pro kullanılıyor)
-        model = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
+        model = genai.GenerativeModel(model_name="models/gemini-1.5-pro-latest")
 
         # Prompt gönder
         response = model.generate_content(
