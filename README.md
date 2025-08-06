@@ -120,11 +120,12 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
   📧 fatmakaraca0626@gmail.com
 
 - 👤 **Nehir Selinay Günenç**   
-  📧 nehir@example.com
+  📧 nehirgunenc06@gmail.com
 
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
