@@ -407,3 +407,11 @@ def list_redis_keys():
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@app.post("/redis/set_model_index")
+def set_model_index(index: int):
+    try:
+        r.set("query:model_index", index)
+        return {"message": f"query:model_index değeri {index} olarak güncellendi."}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
