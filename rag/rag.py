@@ -6,6 +6,7 @@ import requests
 from dotenv import load_dotenv
 import chromadb
 from typing import Dict, List, Optional
+import google.generativeai as genai
 
 load_dotenv()
 
@@ -230,61 +231,29 @@ def query_db(query):
     return ""
 
 def ask_gemini_api(prompt: str, max_tokens=500, temperature=0.7) -> str:
-    # API Anahtarını doğrudan Authorization header'ına koymak yerine
-    # URL parametresi olarak kullanmak daha yaygındır
-    # veya Authorization header'ı 'Bearer' tokenları için kullanılır.
-    # Gemini API'si için API anahtarını doğrudan URL'e eklemek daha yaygın.
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         return "Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin."
 
-    # Gemini API için Content-Type genellikle 'application/json' olur.
-    # API anahtarı URL'ye query parametresi olarak eklenir.
-    headers = {
-        "Content-Type": "application/json"
-    }
-
-    # Gemini API'nin input formatı biraz farklı olabilir.
-    # 'prompt' yerine 'contents' ve 'parts' içinde 'text' beklenir.
-    # Ayrıca, model ismi de URL'de belirtilmelidir.
-    # Şu anki örnekte gemini-pro modelini kullandım.
-    payload = {
-        "contents": [
-            {
-                "parts": [
-                    {"text": prompt}
-                ]
-            }
-        ],
-        "generationConfig": {
-            "temperature": temperature,
-            "maxOutputTokens": max_tokens
-        }
-    }
-
-    # Doğru Gemini API endpoint'i ve API anahtarı URL'ye eklenmeli
-    # Modelin 'gemini-pro' olduğunu varsayıyorum.
-    api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}"
-
+    genai.configure(api_key=api_key)
+    
     try:
-        response = requests.post(api_url, headers=headers, json=payload)
-        response.raise_for_status() # HTTP hatalarını yakalamak için
-        data = response.json()
+        # Modeli başlat (örneğin gemini-pro kullanılıyor)
+        model = genai.GenerativeModel(model_name="models/gemini-1.5-flash-latest")
 
-        # Gemini API'sinin cevabının yapısı farklıdır.
-        # Genellikle 'candidates' içindeki 'content' ve 'parts' içindeki 'text' bulunur.
-        if 'candidates' in data and len(data['candidates']) > 0:
-            for part in data['candidates'][0]['content']['parts']:
-                if 'text' in part:
-                    return part['text'].strip()
-        return "Gemini API'sinden beklenen yanıt alınamadı."
+        # Prompt gönder
+        response = model.generate_content(
+            prompt,
+            generation_config={
+                "temperature": temperature,
+                "max_output_tokens": max_tokens
+            }
+        )
 
-    except requests.exceptions.RequestException as e:
-        # requests kütüphanesine ait hataları daha spesifik yakala
-        return f"Gemini API İstek Hatası: {e}"
+        return response.text.strip()
+
     except Exception as e:
-        # Diğer genel hatalar
-        return f"Genel Hata: {e}"
+        return f"Gemini SDK Hatası: {str(e)}"
 
 def answer_question(question: str, specialty: str = None) -> Dict:
     try:
