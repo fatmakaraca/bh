@@ -316,6 +316,11 @@ Answer based on the medical context provided:
                 "results_found": len(db_results["documents"][0])
             }
         }
+
+    except ResourceExhausted as e:
+    print(f"🟥 answer_question ResourceExhausted fırlatıyor: {e}")
+    raise
+    
     except Exception as e:
         print(f"❌ answer_question dış hata: {type(e).__name__} - {e}")
         return {
