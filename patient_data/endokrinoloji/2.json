@@ -140,8 +140,7 @@
             },
             "thyroid_scintigraphy": {
               "uptake": "%65 (yüksek, normal %10-30)",
-              "pattern": "Diffüz homojen uptake",
-              "diagnosis": "Graves hastalığı ile uyumlu"
+              "pattern": "Diffüz homojen uptake"
             },
             "orbital_mri": {
               "extraocular_muscles": "Inferior ve medial rektus kalınlaşması",
@@ -211,3 +210,4 @@
     ]
   }
 }
+
