@@ -242,7 +242,6 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest"
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("Gemini API anahtarı bulunamadı. Lütfen .env dosyasını kontrol edin.")
-
     genai.configure(api_key=api_key)
     
     try:
@@ -261,7 +260,7 @@ def ask_gemini_api(prompt: str, model_name: str = "models/gemini-1.5-pro-latest"
         return response.text.strip()
 
     except Exception as e:
-        raise RuntimeError(f"Gemini SDK Hatası: {str(e)}")
+        return f"Gemini SDK Hatası: {str(e)}"
 
 def answer_question(question: str, specialty: str = None, model: str = "models/gemini-1.5-pro-latest") -> Dict:
     try:
@@ -305,6 +304,10 @@ Answer based on the medical context provided:
         }
     except Exception as e:
         print(f"❌ answer_question hatası: {e}")
-        raise
+        return {
+            "answer": f"Bir hata oluştu: {str(e)}",
+            "source_metadata": None,
+            "query_info": None
+        }
 
 
