@@ -37,6 +37,28 @@ Android Emulator kullanılarak farklı cihaz çözünürlüklerinde uygulama tes
 - Shared Preferences: Kullanıcının verilerini cihazda kalıcı olarak saklamak için  kullanıldı
 
 ## Sistem Mimarisi
+                        🧑‍⚕️ Kullanıcı
+                             │
+                             ▼
+                 📱 Mobil Uygulama (Flutter)
+                             │
+                [Teşhis süreci, hasta ile etkileşim]
+                             │
+                             ▼
+               🌐 REST API Sunucusu (FastAPI + Redis)
+                             │
+                ┌────────────┴────────────┐
+                │                         │
+                ▼                         ▼
+   🤖 Gemini (Hasta Simülasyonu)     📚 RAG Sistemi
+                                      (Gemini + ChromaDB)
+                                        │
+                        [Embedding + En alakalı içerik]
+                                        ▼
+                           🔁 Gemini üzerinden yanıt
+                             │
+                             ▼
+                 📲 Yanıt Mobil Uygulamaya döner
 
 ## 👥 Ekip ve İş Bölümü
 - **Şeyma**:
@@ -97,6 +119,7 @@ Backend API canlı olarak Render üzerinde yayınlanmaktadır:
 - 👤 **Şeyma Doğan**  
   📧 seymadogan166@gmail.com
   
+
 
 
 
