@@ -289,16 +289,16 @@ Answer based on the medical context provided:
         try:
             llm_answer = ask_gemini_api(prompt, model_name=model, max_tokens=500, temperature=0.7)
         except Exception as e:
-        print(f"❌ Inner exception in ask_gemini_api: {type(e).__name__} - {e}")
-        # Eğer bu zaten ResourceExhausted ise yeniden fırlat
-        if isinstance(e, ResourceExhausted):
+            print(f"❌ Inner exception in ask_gemini_api: {type(e).__name__} - {e}")
+            # Eğer bu zaten ResourceExhausted ise yeniden fırlat
+            if isinstance(e, ResourceExhausted):
+                raise e
+            # Eğer hata mesajı içinde 429 veya quota geçiyorsa yeniden sınıflandır
+            elif "429" in str(e) or "quota" in str(e).lower():
+                print("🚨 answer_question: ResourceExhausted olarak sınıflandırılıyor.")
+                raise ResourceExhausted(str(e))
+            # Diğer hataları direkt fırlat
             raise e
-        # Eğer hata mesajı içinde 429 veya quota geçiyorsa yeniden sınıflandır
-        elif "429" in str(e) or "quota" in str(e).lower():
-            print("🚨 answer_question: ResourceExhausted olarak sınıflandırılıyor.")
-            raise ResourceExhausted(str(e))
-        # Diğer hataları direkt fırlat
-        raise e
 
         
         book_title = metadata.get("book_title", "Unknown")
