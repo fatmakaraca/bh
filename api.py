@@ -11,7 +11,7 @@ from google.api_core.exceptions import ResourceExhausted
 from fastapi import Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from rag.rag import answer_question, get_database_info, ensure_database_ready
+from rag.rag import answer_question, get_database_info, ensure_database_ready, translate_text
 from enum import Enum
 
 model_index_key_for_query = "query:model_index"
@@ -342,13 +342,15 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                 # Kullanılacak model adı
                 model_name = GEMINI_MODELS[current_index]
 
-                # answer_question fonksiyonuna model ismi geçirebilirsin, 
-                # eğer fonksiyon destekliyorsa
-                rag_result = answer_question(request.question, specialty=mapped_specialty, model=model_name)
+                # Soru İngilizceye çevrilir
+                translated_question = translate_text(request.question, target_language="en")
+
+                rag_result = answer_question(translated_question, specialty=mapped_specialty, model=model_name)
 
                 # Başarılıysa sonucu dön
                 if isinstance(rag_result, dict):
-                    answer_text = rag_result.get("answer", str(rag_result))
+                    answer_en = rag_result.get("answer", str(rag_result))
+                    translated_answer = translate_text(answer_en, target_language="tr")
                     source_info = {}
                     if rag_result.get("source_metadata"):
                         metadata = rag_result["source_metadata"]
@@ -358,7 +360,8 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                             "specialty": metadata.get("specialty", "Unknown")
                         }
                 else:
-                    answer_text = str(rag_result)
+                    answer_en = str(rag_result)
+                    translated_answer = translate_text(answer_en, target_language="tr")
                     source_info = {}
 
                 # Kullanılan modeli ve index'i redis'e yaz
@@ -368,7 +371,7 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
                     "question": request.question,
                     "specialty": request.specialty,
                     "mapped_specialty": mapped_specialty,
-                    "answer": answer_text,
+                    "answer": translated_answer,
                     "status": "success",
                     "source_details": source_info,
                     "model": model_name,
@@ -391,4 +394,5 @@ async def query_by_specialty(request: SpecialtyQueryRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Query error: {str(e)}")
+
 
